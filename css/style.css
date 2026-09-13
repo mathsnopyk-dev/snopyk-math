@@ -319,7 +319,38 @@ h1, h2, h3, p { margin: 0; }
   pointer-events: none;
   line-height: 1;
 }
-.hero-inner { position: relative; z-index: 1; max-width: 780px; }
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+}
+@media (min-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: end;
+  }
+}
+
+.hero-inner { max-width: 600px; }
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  order: -1;
+}
+.hero-photo img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 12, 40, 0.35));
+}
+@media (min-width: 860px) {
+  .hero-photo { order: 0; justify-content: flex-end; }
+  .hero-photo img { max-width: 380px; }
+}
 
 .eyebrow {
   font-weight: 700;
