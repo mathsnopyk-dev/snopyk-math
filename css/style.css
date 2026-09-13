@@ -337,7 +337,7 @@ h1, h2, h3, p { margin: 0; }
 
 .hero-photo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   order: -1;
 }
 .hero-photo img {
@@ -348,7 +348,7 @@ h1, h2, h3, p { margin: 0; }
   filter: drop-shadow(0 20px 40px rgba(0, 12, 40, 0.35));
 }
 @media (min-width: 860px) {
-  .hero-photo { order: 0; justify-content: flex-end; }
+  .hero-photo { order: 0; }
   .hero-photo img { max-width: 380px; }
 }
 
