@@ -388,17 +388,6 @@ h1, h2, h3, p { margin: 0; }
   margin-bottom: var(--space-8);
 }
 
-.hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-7);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  padding-top: var(--space-5);
-}
-.hero-stats li { display: flex; flex-direction: column; gap: 4px; }
-.stat-num { font-weight: 800; font-size: 1.3rem; }
-.stat-label { font-size: 0.85rem; color: rgba(255, 255, 255, 0.75); }
-
 @media (max-width: 560px) {
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
