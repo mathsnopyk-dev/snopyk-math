@@ -4,6 +4,15 @@
   /** Той самий Apps Script Web App, що й у головній формі сайту — окремого сервісу сповіщень не треба. */
   const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxmOUH3359Jd8r9tAFkFF78AXndD1G4dgKo6Xv-4Q2jUaQ0gvyPtWxyiBasy48DCzCA/exec";
 
+  function isValidName(value) {
+    return value.trim().length >= 2 && /[a-zA-Zа-яіїєґА-ЯІЇЄҐ]/.test(value);
+  }
+
+  function isValidPhone(value) {
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 9 && digits.length <= 15;
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- Lead modal (same behaviour as main site) ---------- */
@@ -65,6 +74,16 @@
     const data = Object.fromEntries(new FormData(modalForm).entries());
     if (!data.name || !data.phone) {
       statusEl.textContent = "Будь ласка, заповніть ім'я та телефон.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+    if (!isValidName(data.name)) {
+      statusEl.textContent = "Будь ласка, введіть справжнє ім'я.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+    if (!isValidPhone(data.phone)) {
+      statusEl.textContent = "Будь ласка, введіть коректний номер телефону.";
       statusEl.className = "form-status is-error";
       return;
     }
@@ -159,6 +178,16 @@
 
     if (!data.name || !data.phone) {
       statusEl.textContent = "Будь ласка, заповніть ім'я та телефон.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+    if (!isValidName(data.name)) {
+      statusEl.textContent = "Будь ласка, введіть справжнє ім'я.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+    if (!isValidPhone(data.phone)) {
+      statusEl.textContent = "Будь ласка, введіть коректний номер телефону.";
       statusEl.className = "form-status is-error";
       return;
     }
