@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тест рівня з математики — snopyk.math</title>
+<meta name="description" content="Безкоштовний тест рівня з математики для 6–10 класу: 5 запитань, миттєвий результат і поради, що повторити перед навчальним роком.">
+<link rel="canonical" href="https://snopykmath.com/test.html">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23004AAD%22/><text x=%2250%22 y=%2266%22 font-family=%22Arial,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>s</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/test.css">
+</head>
+<body class="test-page">
+
+<a class="skip-link" href="#main">Перейти до змісту</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header test-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="snopyk.math — на головну">
+      <span class="logo-mark" aria-hidden="true">S</span>
+      <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+    </a>
+    <a href="index.html" class="test-back-link">← На головну</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== INTRO / GRADE PICKER ===== -->
+  <section class="section quiz-section" id="quiz-intro" data-step="intro">
+    <div class="container quiz-container">
+      <p class="section-eyebrow">Безкоштовний тест рівня</p>
+      <h1 class="section-title">Перевір, наскільки ти готовий(-а) до нового навчального року</h1>
+      <p class="section-lead">
+        Обери свій клас — відповіси на 5 запитань з математики за шкільною програмою.
+        Це займе 2 хвилини. У кінці отримаєш результат і рекомендацію, що варто повторити.
+      </p>
+
+      <div class="grade-grid" id="grade-grid" role="list">
+        <button type="button" class="grade-card" data-grade="6" role="listitem">
+          <span class="grade-num">6</span>
+          <span class="grade-label">клас</span>
+        </button>
+        <button type="button" class="grade-card" data-grade="7" role="listitem">
+          <span class="grade-num">7</span>
+          <span class="grade-label">клас</span>
+        </button>
+        <button type="button" class="grade-card" data-grade="8" role="listitem">
+          <span class="grade-num">8</span>
+          <span class="grade-label">клас</span>
+        </button>
+        <button type="button" class="grade-card" data-grade="9" role="listitem">
+          <span class="grade-num">9</span>
+          <span class="grade-label">клас</span>
+        </button>
+        <button type="button" class="grade-card" data-grade="10" role="listitem">
+          <span class="grade-num">10</span>
+          <span class="grade-label">клас</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ ===== -->
+  <section class="section quiz-section" id="quiz-questions" data-step="questions" hidden>
+    <div class="container quiz-container quiz-container-narrow">
+      <div class="quiz-progress">
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
+        <p class="quiz-progress-text" id="quiz-progress-text">Питання 1 з 5</p>
+      </div>
+
+      <div class="question-card" id="question-card">
+        <h2 class="question-text" id="question-text"></h2>
+        <div class="question-options" id="question-options"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT GATE ===== -->
+  <section class="section quiz-section section-form" id="quiz-contact" data-step="contact" hidden>
+    <div class="container quiz-container quiz-container-narrow">
+      <div class="form-panel contact-gate-panel">
+        <div class="form-panel-copy">
+          <p class="section-eyebrow section-eyebrow-onblue">Ще один крок</p>
+          <h2 class="section-title section-title-onblue">Залиш контакти — і побачиш свій результат</h2>
+          <p class="section-lead section-lead-onblue">Покажемо бал, розбір кожної відповіді та порадимо, що варто підтягнути перед навчальним роком.</p>
+        </div>
+        <form class="lead-form" id="quiz-contact-form" novalidate>
+          <div class="form-row">
+            <label for="quiz-name">Ім'я учня</label>
+            <input type="text" id="quiz-name" name="name" autocomplete="name" required placeholder="Ім'я">
+          </div>
+          <div class="form-row">
+            <label for="quiz-phone">Телефон</label>
+            <input type="tel" id="quiz-phone" name="phone" autocomplete="tel" required placeholder="+380">
+          </div>
+          <p class="form-hint">*просимо уважно вказувати номер телефону, щоб за ним можна було знайти вас у соцмережах: Telegram, Viber, WhatsApp</p>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Показати результат</button>
+          <p class="form-consent">Натискаючи кнопку, ви погоджуєтесь з умовами <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener">публічної оферти</a></p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="section quiz-section" id="quiz-results" data-step="results" hidden>
+    <div class="container quiz-container quiz-container-narrow">
+      <div class="result-summary" id="result-summary">
+        <p class="section-eyebrow">Твій результат</p>
+        <div class="result-score" id="result-score">0/5</div>
+        <p class="result-message" id="result-message"></p>
+        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на пробний урок</button>
+      </div>
+
+      <div class="result-breakdown" id="result-breakdown"></div>
+
+      <button type="button" class="btn btn-outline-primary quiz-restart" id="quiz-restart">Пройти тест ще раз</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo logo-footer">
+      <span class="logo-mark" aria-hidden="true">S</span>
+      <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+    </a>
+    <p class="footer-copy">
+      © <span id="year"></span> snopyk.math — онлайн-школа математики
+      · <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener" class="footer-legal-link">Публічна оферта</a>
+    </p>
+    <div class="footer-social">
+      <a href="https://t.me/snopyk_math" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-6m12-10-8 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.instagram.com/snopyk.math" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@snopyk_math" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5v5l4.5-2.5-4.5-2.5Z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@snopyk.math" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3.5c.6 2 2.1 3.4 4.1 3.7v2.6c-1.5-.1-2.9-.6-4.1-1.5v6.4a5 5 0 1 1-4-4.9v2.7a2.3 2.3 0 1 0 1.6 2.2V3.5H14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== LEAD MODAL ===== -->
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Закрити">&times;</button>
+    <p class="section-eyebrow">Безкоштовний пробний урок</p>
+    <h2 class="modal-title" id="modal-title">Залишити заявку</h2>
+    <p class="modal-lead">Залиште контакти — ми зв'яжемось і підберемо зручний час.</p>
+    <form class="lead-form" id="lead-form-modal" novalidate>
+      <div class="form-row">
+        <label for="name-modal">Ім'я</label>
+        <input type="text" id="name-modal" name="name" autocomplete="name" required placeholder="Ваше ім'я">
+      </div>
+      <div class="form-row">
+        <label for="phone-modal">Телефон</label>
+        <input type="tel" id="phone-modal" name="phone" autocomplete="tel" required placeholder="+380">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Записатись</button>
+      <p class="form-hint form-hint-center">*просимо уважно вказувати номер телефону, щоб за ним можна було знайти вас у соцмережах: Telegram, Viber, WhatsApp</p>
+      <p class="form-consent form-consent-center">Натискаючи кнопку, ви погоджуєтесь з умовами <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener">публічної оферти</a></p>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script src="js/test-data.js"></script>
+<script src="js/test.js"></script>
+</body>
+</html>

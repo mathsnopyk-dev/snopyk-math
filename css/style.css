@@ -336,8 +336,8 @@ h1, h2, h3, p { margin: 0; }
 }
 .hero-photo img {
   width: 100%;
-  max-width: 280px;
-  height: 260px;
+  max-width: 320px;
+  height: 300px;
   object-fit: cover;
   object-position: top;
   display: block;
@@ -354,7 +354,7 @@ h1, h2, h3, p { margin: 0; }
     order: 0;
     pointer-events: none;
   }
-  .hero-photo img { max-width: 380px; height: 340px; }
+  .hero-photo img { max-width: 440px; height: 390px; }
 }
 
 .eyebrow {

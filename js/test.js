@@ -1,0 +1,239 @@
+(() => {
+  "use strict";
+
+  /** Той самий Apps Script Web App, що й у головній формі сайту — окремого сервісу сповіщень не треба. */
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxmOUH3359Jd8r9tAFkFF78AXndD1G4dgKo6Xv-4Q2jUaQ0gvyPtWxyiBasy48DCzCA/exec";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- Lead modal (same behaviour as main site) ---------- */
+  const overlay = document.getElementById("modal-overlay");
+  const modalClose = document.getElementById("modal-close");
+  let lastFocusedEl = null;
+
+  function openModal() {
+    lastFocusedEl = document.activeElement;
+    overlay.hidden = false;
+    document.body.classList.add("modal-open");
+    const firstInput = overlay.querySelector("input");
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    overlay.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (lastFocusedEl) lastFocusedEl.focus();
+  }
+
+  document.querySelectorAll(".js-open-modal").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      if (el.tagName === "A") e.preventDefault();
+      openModal();
+    });
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) closeModal(); });
+
+  async function submitLead(data, statusEl, submitBtn) {
+    submitBtn.disabled = true;
+    statusEl.textContent = "Надсилаємо...";
+    statusEl.className = "form-status";
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      return true;
+    } catch (err) {
+      statusEl.textContent = "Щось пішло не так. Спробуйте ще раз або напишіть нам у Telegram.";
+      statusEl.className = "form-status is-error";
+      return false;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  }
+
+  const modalForm = document.getElementById("lead-form-modal");
+  modalForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const statusEl = modalForm.querySelector(".form-status");
+    const submitBtn = modalForm.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(modalForm).entries());
+    if (!data.name || !data.phone) {
+      statusEl.textContent = "Будь ласка, заповніть ім'я та телефон.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+    const ok = await submitLead({ ...data, source: "snopyk.math тест рівня" }, statusEl, submitBtn);
+    if (ok) {
+      statusEl.textContent = "Дякуємо! Ми зв'яжемось з вами найближчим часом.";
+      statusEl.className = "form-status is-success";
+      modalForm.reset();
+      setTimeout(closeModal, 1800);
+    }
+  });
+
+  /* ---------- Quiz ---------- */
+  const DATA = window.SNOPYK_TEST_DATA;
+
+  const steps = {
+    intro: document.getElementById("quiz-intro"),
+    questions: document.getElementById("quiz-questions"),
+    contact: document.getElementById("quiz-contact"),
+    results: document.getElementById("quiz-results"),
+  };
+
+  function showStep(name) {
+    Object.values(steps).forEach((el) => { el.hidden = true; });
+    steps[name].hidden = false;
+    steps[name].scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  const state = { grade: null, questions: [], index: 0, answers: [] };
+
+  const progressBar = document.getElementById("quiz-progress-bar");
+  const progressText = document.getElementById("quiz-progress-text");
+  const questionText = document.getElementById("question-text");
+  const questionOptions = document.getElementById("question-options");
+  const LETTERS = ["А", "Б", "В", "Г"];
+
+  document.getElementById("grade-grid").addEventListener("click", (e) => {
+    const card = e.target.closest(".grade-card");
+    if (!card) return;
+    const grade = card.dataset.grade;
+    const gradeData = DATA[grade];
+    if (!gradeData) return;
+
+    state.grade = grade;
+    state.questions = gradeData.questions;
+    state.index = 0;
+    state.answers = [];
+
+    showStep("questions");
+    renderQuestion();
+  });
+
+  function renderQuestion() {
+    const total = state.questions.length;
+    const q = state.questions[state.index];
+
+    progressBar.style.width = `${(state.index / total) * 100}%`;
+    progressText.textContent = `Питання ${state.index + 1} з ${total}`;
+
+    questionText.textContent = q.q;
+    questionOptions.innerHTML = "";
+
+    q.options.forEach((optionText, i) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "option-btn";
+      btn.innerHTML = `<span class="option-letter">${LETTERS[i]}</span><span>${optionText}</span>`;
+      btn.addEventListener("click", () => selectAnswer(i));
+      questionOptions.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(optionIndex) {
+    state.answers[state.index] = optionIndex;
+
+    if (state.index < state.questions.length - 1) {
+      state.index += 1;
+      renderQuestion();
+    } else {
+      progressBar.style.width = "100%";
+      showStep("contact");
+    }
+  }
+
+  /* ---------- Contact gate → submit → show results ---------- */
+  const contactForm = document.getElementById("quiz-contact-form");
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const statusEl = contactForm.querySelector(".form-status");
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+
+    if (!data.name || !data.phone) {
+      statusEl.textContent = "Будь ласка, заповніть ім'я та телефон.";
+      statusEl.className = "form-status is-error";
+      return;
+    }
+
+    const score = state.answers.reduce(
+      (acc, ans, i) => acc + (ans === state.questions[i].correct ? 1 : 0),
+      0
+    );
+
+    const ok = await submitLead(
+      {
+        name: data.name,
+        phone: data.phone,
+        goal: `${state.grade} клас · тест рівня: ${score}/${state.questions.length}`,
+        source: "snopyk.math тест рівня",
+      },
+      statusEl,
+      submitBtn
+    );
+
+    if (ok) {
+      renderResults(score);
+      showStep("results");
+    }
+  });
+
+  function renderResults(score) {
+    const total = state.questions.length;
+    document.getElementById("result-score").textContent = `${score}/${total}`;
+
+    let message;
+    if (score === 5) {
+      message = "Відмінний рівень! Ти повністю готовий(-а) до уроків математики в цьому класі.";
+    } else if (score >= 3) {
+      message = "Добрий результат, але є кілька дрібниць, які варто повторити.";
+    } else {
+      message = "Варто освіжити базові теми перед початком навчального року.";
+    }
+    document.getElementById("result-message").textContent = message;
+
+    const breakdown = document.getElementById("result-breakdown");
+    breakdown.innerHTML = "";
+
+    state.questions.forEach((q, i) => {
+      const userAnswer = state.answers[i];
+      const isCorrect = userAnswer === q.correct;
+
+      const item = document.createElement("div");
+      item.className = `result-item ${isCorrect ? "is-correct" : "is-wrong"}`;
+
+      const icon = isCorrect
+        ? '<svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      const answersLine = isCorrect
+        ? `<span class="is-correct-text">${LETTERS[userAnswer]}) ${q.options[userAnswer]}</span>`
+        : `Твоя відповідь: <span class="is-wrong-text">${LETTERS[userAnswer]}) ${q.options[userAnswer]}</span> · Правильна: <span class="is-correct-text">${LETTERS[q.correct]}) ${q.options[q.correct]}</span>`;
+
+      item.innerHTML = `
+        <div class="result-item-head">
+          <span class="result-icon">${icon}</span>
+          <p class="result-item-q">${q.q}</p>
+        </div>
+        <p class="result-item-answers">${answersLine}</p>
+        <p class="result-item-explain">${q.explanation}</p>
+      `;
+      breakdown.appendChild(item);
+    });
+  }
+
+  document.getElementById("quiz-restart").addEventListener("click", () => {
+    state.grade = null;
+    state.questions = [];
+    state.index = 0;
+    state.answers = [];
+    showStep("intro");
+  });
+})();
