@@ -344,6 +344,8 @@ h1, h2, h3, p { margin: 0; }
   justify-content: flex-end;
   order: -1;
 }
+/* <picture> лише обгортка для WebP — макет рахуємо так, ніби img пряма дитина */
+.hero-photo picture { display: contents; }
 .hero-photo img {
   width: 100%;
   max-width: 320px;
