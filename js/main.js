@@ -12,8 +12,36 @@
   }
 
   function isValidPhone(value) {
+    if (!/^[\d\s()+\-.]+$/.test(value.trim())) return false;
     const digits = value.replace(/\D/g, "");
     return digits.length >= 9 && digits.length <= 15;
+  }
+
+  const LEAD_SENT_KEY = "snopykmath_lead_sent";
+  const SEND_ERROR_HTML =
+    'Не вдалося надіслати заявку. Спробуйте ще раз або напишіть нам у Telegram: ' +
+    '<a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener">@snopyk_math_manager1</a>';
+
+  /**
+   * Надсилає заявку і чекає відповіді скрипта: успіх лише тоді, коли він
+   * відповів status "ok". text/plain — щоб браузер не робив CORS preflight.
+   */
+  async function postLead(payload) {
+    const response = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json();
+    if (result.status !== "ok") throw new Error(result.message || "Lead was not saved");
+  }
+
+  function rememberLeadSent() {
+    try { localStorage.setItem(LEAD_SENT_KEY, "1"); } catch (err) { /* приватний режим */ }
+  }
+
+  function leadAlreadySent() {
+    try { return localStorage.getItem(LEAD_SENT_KEY) === "1"; } catch (err) { return false; }
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -158,9 +186,19 @@
   const AUTO_POPUP_DELAY_MS = 25000;
   const AUTO_POPUP_KEY = "snopykmath_popup_shown";
 
+  const leadSection = document.getElementById("lead-form");
+
+  /** Форма заявки на екрані або людина вже в ній пише — попап тільки заважатиме. */
+  function isUsingLeadForm() {
+    const rect = leadSection.getBoundingClientRect();
+    return (rect.top < window.innerHeight && rect.bottom > 0) || leadSection.contains(document.activeElement);
+  }
+
   function maybeAutoOpen() {
     if (sessionStorage.getItem(AUTO_POPUP_KEY)) return;
+    if (leadAlreadySent()) return;
     if (!overlay.hidden) return;
+    if (isUsingLeadForm()) return;
     openModal();
     sessionStorage.setItem(AUTO_POPUP_KEY, "1");
   }
@@ -214,12 +252,8 @@
       statusEl.className = "form-status";
 
       try {
-        await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...data, source: "snopyk.math site" }),
-        });
+        await postLead({ ...data, source: "snopyk.math site" });
+        rememberLeadSent();
         statusEl.textContent = "Дякуємо! Ми зв'яжемось з вами найближчим часом.";
         statusEl.className = "form-status is-success";
         form.reset();
@@ -227,7 +261,7 @@
           setTimeout(closeModal, 1800);
         }
       } catch (err) {
-        statusEl.textContent = "Щось пішло не так. Спробуйте ще раз або напишіть нам у Telegram.";
+        statusEl.innerHTML = SEND_ERROR_HTML;
         statusEl.className = "form-status is-error";
       } finally {
         submitBtn.disabled = false;

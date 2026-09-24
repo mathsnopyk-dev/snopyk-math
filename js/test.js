@@ -9,9 +9,16 @@
   }
 
   function isValidPhone(value) {
+    if (!/^[\d\s()+\-.]+$/.test(value.trim())) return false;
     const digits = value.replace(/\D/g, "");
     return digits.length >= 9 && digits.length <= 15;
   }
+
+  /** Той самий ключ, що й у main.js: після заявки з тесту головна не показує авто-попап. */
+  const LEAD_SENT_KEY = "snopykmath_lead_sent";
+  const SEND_ERROR_HTML =
+    'Не вдалося надіслати заявку. Спробуйте ще раз або напишіть нам у Telegram: ' +
+    '<a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener">@snopyk_math_manager1</a>';
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -50,15 +57,19 @@
     statusEl.textContent = "Надсилаємо...";
     statusEl.className = "form-status";
     try {
-      await fetch(FORM_ENDPOINT, {
+      // Чекаємо відповіді скрипта: успіх лише коли він відповів status "ok".
+      // text/plain — щоб браузер не робив CORS preflight.
+      const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(data),
       });
+      const result = await response.json();
+      if (result.status !== "ok") throw new Error(result.message || "Lead was not saved");
+      try { localStorage.setItem(LEAD_SENT_KEY, "1"); } catch (err) { /* приватний режим */ }
       return true;
     } catch (err) {
-      statusEl.textContent = "Щось пішло не так. Спробуйте ще раз або напишіть нам у Telegram.";
+      statusEl.innerHTML = SEND_ERROR_HTML;
       statusEl.className = "form-status is-error";
       return false;
     } finally {

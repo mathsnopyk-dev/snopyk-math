@@ -758,6 +758,7 @@ h1, h2, h3, p { margin: 0; }
 .form-status.is-error { color: var(--color-danger); }
 .section-form .form-status.is-success { color: #baf3d6; }
 .section-form .form-status.is-error { color: #ffd0d0; }
+.form-status a { color: inherit; text-decoration: underline; }
 
 /* ===================== FOOTER ===================== */
 .site-footer { background: var(--color-primary-darker); color: rgba(255, 255, 255, 0.75); padding: var(--space-6) 0; }
