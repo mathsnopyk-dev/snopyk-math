@@ -360,6 +360,10 @@
           <p class="section-lead section-lead-onblue">Розкажемо про формат, підберемо час і проведемо безкоштовний пробний урок.</p>
         </div>
         <form class="lead-form" id="lead-form-main" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website-main">Не заповнюйте це поле</label>
+            <input type="text" id="website-main" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form-row">
             <label for="name-main">Ім'я</label>
             <input type="text" id="name-main" name="name" autocomplete="name" required placeholder="Ваше ім'я">
@@ -420,6 +424,10 @@
     <h2 class="modal-title" id="modal-title">Залишити заявку</h2>
     <p class="modal-lead">Залиште контакти — ми зв'яжемось і підберемо зручний час.</p>
     <form class="lead-form" id="lead-form-modal" novalidate>
+      <div class="hp-field" aria-hidden="true">
+        <label for="website-modal">Не заповнюйте це поле</label>
+        <input type="text" id="website-modal" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <div class="form-row">
         <label for="name-modal">Ім'я</label>
         <input type="text" id="name-modal" name="name" autocomplete="name" required placeholder="Ваше ім'я">

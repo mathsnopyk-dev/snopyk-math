@@ -107,6 +107,10 @@
           <p class="section-lead section-lead-onblue">Покажемо бал, розбір кожної відповіді та порадимо, що варто підтягнути перед навчальним роком.</p>
         </div>
         <form class="lead-form" id="quiz-contact-form" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website-quiz">Не заповнюйте це поле</label>
+            <input type="text" id="website-quiz" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form-row">
             <label for="quiz-name">Ім'я учня</label>
             <input type="text" id="quiz-name" name="name" autocomplete="name" required placeholder="Ім'я">
@@ -178,6 +182,10 @@
     <h2 class="modal-title" id="modal-title">Залишити заявку</h2>
     <p class="modal-lead">Залиште контакти — ми зв'яжемось і підберемо зручний час.</p>
     <form class="lead-form" id="lead-form-modal" novalidate>
+      <div class="hp-field" aria-hidden="true">
+        <label for="website-modal">Не заповнюйте це поле</label>
+        <input type="text" id="website-modal" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <div class="form-row">
         <label for="name-modal">Ім'я</label>
         <input type="text" id="name-modal" name="name" autocomplete="name" required placeholder="Ваше ім'я">

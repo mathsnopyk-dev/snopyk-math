@@ -776,6 +776,15 @@ h1, h2, h3, p { margin: 0; }
 .section-form .form-status.is-error { color: #ffd0d0; }
 .form-status a { color: inherit; text-decoration: underline; }
 
+/* Анти-спам поле: людям не видно, боти заповнюють */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ===================== FOOTER ===================== */
 .site-footer { background: var(--color-primary-darker); color: rgba(255, 255, 255, 0.75); padding: var(--space-6) 0; }
 .footer-inner {

@@ -24,6 +24,24 @@ function doPost(e) {
     return jsonResponse({ status: "error", message: "Bad request" });
   }
 
+  // Анти-спам: приховане поле website заповнюють лише боти — мовчки відкидаємо.
+  if (data.website) {
+    return jsonResponse({ status: "ok" });
+  }
+
+  // Та сама перевірка, що й на сайті, — на випадок ботів, які шлють запити напряму.
+  const phoneDigits = String(data.phone || "").replace(/\D/g, "");
+  if (String(data.name || "").trim().length < 2 || phoneDigits.length < 9 || phoneDigits.length > 15) {
+    return jsonResponse({ status: "error", message: "Invalid name or phone" });
+  }
+
+  // Той самий номер протягом 10 хвилин — повтор (подвійний клік або спам), не дублюємо.
+  const cache = CacheService.getScriptCache();
+  const dedupeKey = "lead_" + phoneDigits;
+  if (cache.get(dedupeKey)) {
+    return jsonResponse({ status: "ok" });
+  }
+
   const name = data.name || "—";
   const phone = data.phone || "—";
   const goal = data.goal || "—";
@@ -45,7 +63,9 @@ function doPost(e) {
 
   let sheetOk = false;
   try {
-    getLeadsSheet().appendRow([new Date(), name, phone, goal, source, telegramOk ? "✅" : "❌"]);
+    getLeadsSheet().appendRow([
+      new Date(), asText(name), asText(phone), asText(goal), asText(source), telegramOk ? "✅" : "❌",
+    ]);
     sheetOk = true;
   } catch (err) {
     sheetOk = false;
@@ -53,6 +73,7 @@ function doPost(e) {
 
   // Заявка не загубилась, якщо дійшла хоча б кудись: у Telegram або в таблицю.
   if (telegramOk || sheetOk) {
+    cache.put(dedupeKey, "1", 600);
     return jsonResponse({ status: "ok" });
   }
   return jsonResponse({ status: "error", message: "Lead was not delivered" });
@@ -87,6 +108,14 @@ function getLeadsSheet() {
   sheet.setFrozenRows(1);
   props.setProperty(SHEET_ID_PROPERTY, spreadsheet.getId());
   return sheet;
+}
+
+/**
+ * Апостроф на початку змушує Таблицю зберегти значення як текст:
+ * інакше "+380…" стає формулою (#ERROR!), а "=…" з форми — виконується.
+ */
+function asText(value) {
+  return "'" + String(value);
 }
 
 function jsonResponse(obj) {

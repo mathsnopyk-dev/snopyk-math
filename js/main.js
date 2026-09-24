@@ -26,7 +26,9 @@
    * Надсилає заявку і чекає відповіді скрипта: успіх лише тоді, коли він
    * відповів status "ok". text/plain — щоб браузер не робив CORS preflight.
    */
-  async function postLead(payload) {
+  async function postLead({ website, ...payload }) {
+    // Ботові показуємо звичайне «Дякуємо!», але нікуди нічого не надсилаємо.
+    if (looksLikeBot(website)) return;
     const response = await fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -34,6 +36,15 @@
     });
     const result = await response.json();
     if (result.status !== "ok") throw new Error(result.message || "Lead was not saved");
+  }
+
+  /**
+   * Анти-спам: приховане поле website бачать лише боти, а людина не встигне
+   * заповнити форму за перші 3 секунди після відкриття сторінки.
+   */
+  const PAGE_OPENED_AT = Date.now();
+  function looksLikeBot(website) {
+    return Boolean(website) || Date.now() - PAGE_OPENED_AT < 3000;
   }
 
   function rememberLeadSent() {
@@ -164,7 +175,7 @@
     lastFocusedEl = document.activeElement;
     overlay.hidden = false;
     document.body.classList.add("modal-open");
-    const firstInput = overlay.querySelector("input");
+    const firstInput = overlay.querySelector("input:not([name=\"website\"])");
     if (firstInput) firstInput.focus();
   }
 

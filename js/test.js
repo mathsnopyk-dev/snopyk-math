@@ -20,6 +20,15 @@
     'Не вдалося надіслати заявку. Спробуйте ще раз або напишіть нам у Telegram: ' +
     '<a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener">@snopyk_math_manager1</a>';
 
+  /**
+   * Анти-спам: приховане поле website бачать лише боти, а людина не встигне
+   * заповнити форму за перші 3 секунди після відкриття сторінки.
+   */
+  const PAGE_OPENED_AT = Date.now();
+  function looksLikeBot(website) {
+    return Boolean(website) || Date.now() - PAGE_OPENED_AT < 3000;
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- Lead modal (same behaviour as main site) ---------- */
@@ -31,7 +40,7 @@
     lastFocusedEl = document.activeElement;
     overlay.hidden = false;
     document.body.classList.add("modal-open");
-    const firstInput = overlay.querySelector("input");
+    const firstInput = overlay.querySelector("input:not([name=\"website\"])");
     if (firstInput) firstInput.focus();
   }
 
@@ -52,7 +61,9 @@
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) closeModal(); });
 
-  async function submitLead(data, statusEl, submitBtn) {
+  async function submitLead({ website, ...data }, statusEl, submitBtn) {
+    // Ботові показуємо звичайний успіх, але нікуди нічого не надсилаємо.
+    if (looksLikeBot(website)) return true;
     submitBtn.disabled = true;
     statusEl.textContent = "Надсилаємо...";
     statusEl.className = "form-status";
@@ -214,6 +225,7 @@
         phone: data.phone,
         goal: `${state.grade} клас · тест рівня: ${score}/${state.questions.length}`,
         source: "snopyk.math тест рівня",
+        website: data.website,
       },
       statusEl,
       submitBtn
