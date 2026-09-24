@@ -53,11 +53,18 @@
   function closeMobileNav() {
     mobileNav.classList.remove("is-open");
     burger.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
   }
 
   burger.addEventListener("click", () => {
     const isOpen = mobileNav.classList.toggle("is-open");
     burger.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("nav-open", isOpen);
+  });
+
+  // Якщо меню лишилось відкритим, а вікно розширили до десктопу — закриваємо.
+  window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
+    if (e.matches) closeMobileNav();
   });
 
   mobileNav.querySelectorAll("a").forEach((link) => {
