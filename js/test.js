@@ -61,6 +61,24 @@
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) closeModal(); });
 
+  /** Tab / Shift+Tab ходять по колу всередині відкритого вікна, а не по сторінці під ним. */
+  function trapFocus(e) {
+    if (e.key !== "Tab" || overlay.hidden) return;
+    const focusable = Array.from(
+      overlay.querySelectorAll('a[href], button:not([disabled]), input:not([tabindex="-1"])')
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+  document.addEventListener("keydown", trapFocus);
+
   async function submitLead({ website, ...data }, statusEl, submitBtn) {
     // Ботові показуємо звичайний успіх, але нікуди нічого не надсилаємо.
     if (looksLikeBot(website)) return true;
