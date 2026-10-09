@@ -262,7 +262,7 @@ h1, h2, h3, p { margin: 0; }
   .main-nav ul { gap: var(--space-5); }
 }
 @media (max-width: 1100px) {
-  .main-nav ul { gap: var(--space-4); }
+  .main-nav ul { gap: var(--space-3); }
 }
 
 @media (max-width: 1023px) {
