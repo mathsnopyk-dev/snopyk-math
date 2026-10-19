@@ -93,3 +93,9 @@
 @media (max-width: 560px) {
   .vacancy-cta .btn { width: 100%; }
 }
+
+/* ---------- Legal pages (privacy) ---------- */
+.legal-text > p { color: var(--color-text-muted); margin-bottom: var(--space-6); max-width: 70ch; }
+.legal-text > p a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+.legal-text .vacancy-subtitle { margin-bottom: var(--space-3); }
+.legal-text .vacancy-list { margin-bottom: var(--space-4); }
