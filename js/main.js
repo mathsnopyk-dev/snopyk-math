@@ -294,7 +294,7 @@
       statusEl.className = "form-status";
 
       try {
-        await postLead({ ...data, source: "snopyk.math site" });
+        await postLead({ ...data, source: document.body.dataset.leadSource || "snopyk.math site" });
         rememberLeadSent();
         if (window.gtag) gtag("event", "generate_lead", { form: form.id });
         statusEl.textContent = "Дякуємо! Ми зв'яжемось з вами найближчим часом.";

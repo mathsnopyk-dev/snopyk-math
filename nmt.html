@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6CEEDRTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7C6CEEDRTM");
+  // Натискання на будь-яке посилання в Telegram рахуємо як звернення.
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="t.me/"]');
+    if (link) gtag("event", "contact_telegram", { link_url: link.href });
+  });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Підготовка до НМТ з математики онлайн — snopyk.math</title>
+<meta name="description" content="Підготовка до НМТ з математики онлайн: діагностика рівня, план до дати тесту, уся програма і тренування на завданнях формату НМТ. Індивідуально від 550 грн, у парі від 450 грн, у міні-групі від 300 грн.">
+<link rel="canonical" href="https://snopykmath.com/nmt">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="snopyk.math">
+<meta property="og:title" content="Підготовка до НМТ з математики онлайн — snopyk.math">
+<meta property="og:description" content="План до дати тесту, уся програма НМТ і тренування на завданнях формату тесту. Звіти про прогрес для батьків.">
+<meta property="og:url" content="https://snopykmath.com/nmt">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://snopykmath.com/assets/images/og-image.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://snopykmath.com/assets/images/og-image.jpg?v=2">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Коли краще починати підготовку до НМТ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Найкомфортніше — за 9 місяців і більше: устигаємо пройти всю програму і потренуватися. Але почати можна будь-коли: за 3–6 місяців фокусуємось на найважливіших темах і тактиці тесту."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Скільки занять на тиждень потрібно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Найчастіше — 1–2 заняття на тиждень. Точну кількість радимо після діагностики: вона залежить від рівня, мети і того, скільки часу лишилось до тесту."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи можна підготуватися, якщо зараз дуже слабкий рівень?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Починаємо з прогалин попередніх класів, на яких тримається програма НМТ, і поступово переходимо до завдань формату тесту. Головне — почати вчасно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи будуть домашні завдання?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так, після кожного уроку — завдання для закріплення у форматі НМТ. Без практики між заняттями тема швидко забувається."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Як батьки дізнаються про прогрес?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ми надсилаємо батькам звіти: що пройшли, що вже виходить і над чим працюємо далі."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Скільки коштує підготовка до НМТ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі до 6 учнів — від 300 грн з учня. Урок триває 55 хвилин."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Як проходить діагностика?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Це перше заняття онлайн: визначаємо рівень, знаходимо прогалини, обговорюємо мету й бажаний бал і складаємо план підготовки. Після неї ви самі вирішуєте, чи продовжувати."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Підготовка до НМТ з математики онлайн",
+  "serviceType": "Репетитор математики, підготовка до НМТ",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "snopyk.math",
+    "url": "https://snopykmath.com/"
+  },
+  "areaServed": "UA",
+  "url": "https://snopykmath.com/nmt",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "UAH",
+    "lowPrice": "300",
+    "highPrice": "550"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261020b">
+</head>
+<body data-lead-source="snopyk.math НМТ">
+
+<a class="skip-link" href="#main">Перейти до змісту</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="snopyk.math — на головну">
+      <span class="logo-mark" aria-hidden="true">S</span>
+      <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Основна навігація">
+      <ul>
+        <li><a href="/">Головна</a></li>
+        <li><a href="#program">Програма</a></li>
+        <li><a href="#how">Як готуємось</a></li>
+        <li><a href="#testimonials">Результати</a></li>
+        <li><a href="#pricing">Ціни</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#lead-form" class="btn btn-primary btn-sm js-open-modal">Записатись на діагностику</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  </header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="/">Головна</a></li>
+    <li><a href="#program">Програма</a></li>
+    <li><a href="#how">Як готуємось</a></li>
+    <li><a href="#testimonials">Результати</a></li>
+    <li><a href="#pricing">Ціни</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#lead-form" class="btn btn-white btn-block js-open-modal">Записатись на діагностику</a>
+</div>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-watermark" aria-hidden="true">НМТ</div>
+    <div class="container hero-grid">
+      <div class="hero-inner">
+        <p class="eyebrow">Підготовка до НМТ з математики онлайн</p>
+        <h1>НМТ з математики: план замість паніки</h1>
+        <p class="hero-lead">
+          Пройдемо всю програму за чітким планом до дати тесту, закриємо прогалини
+          з попередніх класів і натренуємо завдання у форматі НМТ — щоб у день іспиту
+          дитина знала, що робити, а не вгадувала.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-white btn-lg js-open-modal">Записатись на діагностику</button>
+          <a href="/test" class="btn btn-outline-white btn-lg">Перевірити рівень</a>
+        </div>
+        <ul class="hero-points">
+          <li>Індивідуально, у парі або в міні-групі</li>
+          <li>Тренування на завданнях формату НМТ</li>
+          <li>Звіти про прогрес для батьків</li>
+        </ul>
+      </div>
+      <div class="hero-photo">
+        <picture>
+          <source srcset="assets/images/founder-photo.webp" type="image/webp">
+          <img src="assets/images/founder-photo.png" alt="Ірина, засновниця snopyk.math" width="832" height="900" fetchpriority="high">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAINS ===== -->
+  <section class="section" id="pains">
+    <div class="container">
+      <p class="section-eyebrow">Знайомо?</p>
+      <h2 class="section-title">Що найчастіше хвилює батьків перед НМТ</h2>
+
+      <ul class="pain-grid">
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">⏳</span>
+          <p>«До НМТ менше року, а прогалини тягнуться ще з 7 класу»</p>
+        </li>
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">😰</span>
+          <p>«Теорію ніби знає, а на тесті губиться і не встигає»</p>
+        </li>
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">🎓</span>
+          <p>«Від балу залежить бюджет і вибір університету»</p>
+        </li>
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">📚</span>
+          <p>«Сам готуватися не виходить — немає системи, все вроздріб»</p>
+        </li>
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">🏫</span>
+          <p>«У школі проходять програму, а до формату тесту не готують»</p>
+        </li>
+        <li class="pain-card">
+          <span class="pain-emoji" aria-hidden="true">🧩</span>
+          <p>«Боїться, що в день іспиту все вилетить з голови»</p>
+        </li>
+      </ul>
+
+      <p class="pain-outro">Усе це вирішується системою: зрозуміти, що вже є, скласти план до дати тесту і регулярно тренуватися у форматі НМТ.</p>
+    </div>
+  </section>
+
+  <!-- ===== PROGRAM ===== -->
+  <section class="section section-alt" id="program">
+    <div class="container">
+      <p class="section-eyebrow">Що входить у підготовку</p>
+      <h2 class="section-title">Уся програма НМТ — по темах і по черзі</h2>
+
+      <div class="cards-grid audience-grid">
+        <article class="audience-card">
+          <h3>Алгебра і функції</h3>
+          <p>Вирази, степені й корені, логарифми, графіки функцій, похідна — від основ до задач рівня НМТ.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Рівняння і нерівності</h3>
+          <p>Лінійні, квадратні, раціональні, показникові, логарифмічні, тригонометричні і їхні системи.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Геометрія</h3>
+          <p>Планіметрія і стереометрія: фігури, площі, об'єми, координати і вектори.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Текстові задачі</h3>
+          <p>Відсотки, пропорції, рух і робота, комбінаторика, ймовірність і статистика.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Формат тесту</h3>
+          <p>Усі типи завдань НМТ: як читати умову, як не загубити бали на дрібницях і як перевіряти себе.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Робота на час</h3>
+          <p>Тренуємось розподіляти час, щоб устигнути все і не застрягти на одному завданні.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="how">
+    <div class="container">
+      <p class="section-eyebrow">Як готуємось</p>
+      <h2 class="section-title">4 кроки від «не знаю, з чого почати» до впевненості на тесті</h2>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>Діагностика рівня</h3>
+          <p>На першому уроці бачимо, що дитина вже вміє і де прогалини — з усіх класів, не лише з 11-го.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>План до дати НМТ</h3>
+          <p>Розписуємо теми по тижнях так, щоб устигнути все і мати час на повторення перед тестом.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Заняття і практика</h3>
+          <p>Пояснюємо тему, відпрацьовуємо на завданнях формату НМТ, даємо домашні для закріплення.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">4</span>
+          <h3>Звіти для батьків</h3>
+          <p>Ви бачите, що пройшли, що вже виходить і над чим працюємо далі — без сюрпризів наприкінці.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== WHEN TO START ===== -->
+  <section class="section section-alt" id="when">
+    <div class="container">
+      <p class="section-eyebrow">Коли починати</p>
+      <h2 class="section-title">Почати ніколи не пізно — змінюється лише темп</h2>
+
+      <div class="cards-grid audience-grid">
+        <article class="audience-card">
+          <h3>9+ місяців до тесту</h3>
+          <p>Ідеально: спокійно проходимо всю програму, закриваємо прогалини і маємо кілька місяців на тренування.</p>
+        </article>
+        <article class="audience-card">
+          <h3>4–6 місяців</h3>
+          <p>Інтенсивніше: фокус на темах, які найчастіше трапляються в тесті, і на типових помилках дитини.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Менше 3 місяців</h3>
+          <p>Рятуємо бали: найважливіші теми, тактика тесту і робота на час, щоб упевнено набрати максимум можливого.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <p class="section-eyebrow">Результати</p>
+      <h2 class="section-title">Бали НМТ наших учнів</h2>
+      <p class="section-lead">Відео та фото-відгуки від учнів і батьків — гортайте стрічку, щоб побачити всі.</p>
+    </div>
+
+    <div class="carousel" id="testimonials-carousel">
+      <button type="button" class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Попередній відгук">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Наступний відгук">
+        <svg viewBox="0 0 24 24" fill="none"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <ul class="carousel-track" id="carousel-track" role="list" tabindex="0" aria-label="Список відгуків, гортайте вліво/вправо">
+        <li class="testimonial-card testimonial-video-native">
+          <video controls preload="metadata" playsinline poster="assets/testimonials/videos/video-1-poster.jpg">
+            <source src="assets/testimonials/videos/video-1.mp4" type="video/mp4">
+          </video>
+        </li>
+        <li class="testimonial-card testimonial-video-native">
+          <video controls preload="metadata" playsinline poster="assets/testimonials/videos/video-2-poster.jpg">
+            <source src="assets/testimonials/videos/video-2.mp4" type="video/mp4">
+          </video>
+        </li>
+        <li class="testimonial-card testimonial-photo">
+          <img src="assets/testimonials/results-collage-1.jpeg" alt="Відгуки та результати учнів snopyk.math: НМТ 151, 170 балів та інші історії успіху" loading="lazy">
+        </li>
+      </ul>
+
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Слайди відгуків"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="about-copy">
+        <p class="section-eyebrow">Хто готує</p>
+        <h2 class="section-title">Ірина — засновниця snopyk.math</h2>
+        <p>
+          Математик за освітою, викладаю 9 років. Сама складала ЗНО з математики на 189 балів,
+          тож знаю тест не лише як викладач, а й зсередини. За цей час підготувала понад 150 учнів.
+        </p>
+        <ul class="about-facts">
+          <li><strong>9 років</strong><span>викладаю математику</span></li>
+          <li><strong>150+</strong><span>учнів</span></li>
+          <li><strong>189</strong><span>мій бал ЗНО з математики</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <p class="section-eyebrow">Ціни</p>
+      <h2 class="section-title">Вартість підготовки до НМТ</h2>
+      <p class="section-lead">Урок триває 55 хвилин. Формат і кількість занять на тиждень радимо після діагностики.</p>
+
+      <ul class="format-price-grid">
+        <li class="format-price">
+          <h3>Індивідуально</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 550 <span class="format-price-unit">грн / урок</span></p>
+          <p>Найшвидший шлях: план і темп повністю під одного учня.</p>
+        </li>
+        <li class="format-price">
+          <h3>У парі</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 450 <span class="format-price-unit">грн / урок</span></p>
+          <p>Готуватися разом з другом чи однокласником. Ціна за одного учня.</p>
+        </li>
+        <li class="format-price">
+          <h3>Міні-група</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 300 <span class="format-price-unit">грн / урок</span></p>
+          <p>До 6 учнів, які готуються до НМТ. Ціна за одного учня.</p>
+        </li>
+      </ul>
+
+      <div class="section-cta">
+        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt" id="faq">
+    <div class="container faq-layout">
+      <div class="faq-intro">
+        <p class="section-eyebrow">FAQ</p>
+        <h2 class="section-title">Питання про підготовку до НМТ</h2>
+        <p class="section-lead">Не знайшли відповідь? Напишіть нам у Telegram — відповімо особисто.</p>
+        <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-outline-primary">Написати в Telegram</a>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Коли краще починати підготовку до НМТ?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Найкомфортніше — за 9 місяців і більше: устигаємо пройти всю програму і потренуватися. Але почати можна будь-коли: за 3–6 місяців фокусуємось на найважливіших темах і тактиці тесту.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Скільки занять на тиждень потрібно?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Найчастіше — 1–2 заняття на тиждень. Точну кількість радимо після діагностики: вона залежить від рівня, мети і того, скільки часу лишилось до тесту.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Чи можна підготуватися, якщо зараз дуже слабкий рівень?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Так. Починаємо з прогалин попередніх класів, на яких тримається програма НМТ, і поступово переходимо до завдань формату тесту. Головне — почати вчасно.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Чи будуть домашні завдання?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Так, після кожного уроку — завдання для закріплення у форматі НМТ. Без практики між заняттями тема швидко забувається.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Як батьки дізнаються про прогрес?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ми надсилаємо батькам звіти: що пройшли, що вже виходить і над чим працюємо далі.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Скільки коштує підготовка до НМТ?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі до 6 учнів — від 300 грн з учня. Урок триває 55 хвилин.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Як проходить діагностика?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Це перше заняття онлайн: визначаємо рівень, знаходимо прогалини, обговорюємо мету й бажаний бал і складаємо план підготовки. Після неї ви самі вирішуєте, чи продовжувати.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEAD FORM (inline) ===== -->
+  <section class="section section-form" id="lead-form">
+    <div class="container">
+      <div class="form-panel">
+        <div class="form-panel-copy">
+          <p class="section-eyebrow section-eyebrow-onblue">Запис на діагностику</p>
+          <h2 class="section-title section-title-onblue">Залиште заявку — і ми зв'яжемось з вами</h2>
+          <p class="section-lead section-lead-onblue">Підберемо зручний час для діагностики — першого уроку, на якому визначимо рівень і складемо план.</p>
+        </div>
+        <form class="lead-form" id="lead-form-main" novalidate>
+          <div class="hp-field" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label for="website-main">Не заповнюйте це поле</label>
+            <input type="text" id="website-main" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-row">
+            <label for="name-main">Ім'я</label>
+            <input type="text" id="name-main" name="name" autocomplete="name" required placeholder="Ваше ім'я">
+          </div>
+          <div class="form-row">
+            <label for="phone-main">Телефон</label>
+            <input type="tel" id="phone-main" name="phone" autocomplete="tel" required placeholder="+380">
+          </div>
+          <div class="form-row">
+            <label for="contact-main">Клас учня / мета навчання</label>
+            <input type="text" id="contact-main" name="goal" placeholder="Напр.: 11 клас, НМТ у 2027">
+          </div>
+          <p class="form-hint">*просимо уважно вказувати номер телефону, щоб за ним можна було знайти вас у соцмережах: Telegram, Viber, WhatsApp</p>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Записатись на діагностику</button>
+          <p class="form-consent">Натискаючи кнопку, ви погоджуєтесь з умовами <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener">публічної оферти</a> та <a href="/privacy">політикою конфіденційності</a></p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="logo logo-footer">
+      <span class="logo-mark" aria-hidden="true">S</span>
+      <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+    </a>
+    <p class="footer-copy">
+      © <span id="year"></span> snopyk.math — онлайн-школа математики
+      · <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener" class="footer-legal-link">Публічна оферта</a>
+      · <a href="/privacy" class="footer-legal-link">Політика конфіденційності</a>
+    </p>
+    <div class="footer-social">
+      <a href="https://t.me/snopyk_math" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-6m12-10-8 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.instagram.com/snopyk.math" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@snopyk_math" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5v5l4.5-2.5-4.5-2.5Z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@snopyk.math" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3.5c.6 2 2.1 3.4 4.1 3.7v2.6c-1.5-.1-2.9-.6-4.1-1.5v6.4a5 5 0 1 1-4-4.9v2.7a2.3 2.3 0 1 0 1.6 2.2V3.5H14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://t.me/snopyk_math_manager1" class="tg-float" target="_blank" rel="noopener" aria-label="Написати нам у Telegram">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-6m12-10-8 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="tg-float-label">Написати в Telegram</span>
+</a>
+
+<!-- ===== LEAD MODAL ===== -->
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Закрити">&times;</button>
+    <p class="section-eyebrow">Діагностика рівня</p>
+    <h2 class="modal-title" id="modal-title">Залишити заявку</h2>
+    <p class="modal-lead">Залиште контакти — ми зв'яжемось і підберемо зручний час.</p>
+    <form class="lead-form" id="lead-form-modal" novalidate>
+      <div class="hp-field" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+        <label for="website-modal">Не заповнюйте це поле</label>
+        <input type="text" id="website-modal" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <label for="name-modal">Ім'я</label>
+        <input type="text" id="name-modal" name="name" autocomplete="name" required placeholder="Ваше ім'я">
+      </div>
+      <div class="form-row">
+        <label for="phone-modal">Телефон</label>
+        <input type="tel" id="phone-modal" name="phone" autocomplete="tel" required placeholder="+380">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Записатись</button>
+      <p class="form-hint form-hint-center">*просимо уважно вказувати номер телефону, щоб за ним можна було знайти вас у соцмережах: Telegram, Viber, WhatsApp</p>
+      <p class="form-consent form-consent-center">Натискаючи кнопку, ви погоджуєтесь з умовами <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener">публічної оферти</a> та <a href="/privacy">політикою конфіденційності</a></p>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js?v=20261020"></script>
+</body>
+</html>
