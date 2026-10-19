@@ -296,6 +296,7 @@
       try {
         await postLead({ ...data, source: "snopyk.math site" });
         rememberLeadSent();
+        if (window.gtag) gtag("event", "generate_lead", { form: form.id });
         statusEl.textContent = "Дякуємо! Ми зв'яжемось з вами найближчим часом.";
         statusEl.className = "form-status is-success";
         form.reset();

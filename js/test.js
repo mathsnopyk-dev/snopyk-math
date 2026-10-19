@@ -96,6 +96,7 @@
       const result = await response.json();
       if (result.status !== "ok") throw new Error(result.message || "Lead was not saved");
       try { localStorage.setItem(LEAD_SENT_KEY, "1"); } catch (err) { /* приватний режим */ }
+      if (window.gtag) gtag("event", "generate_lead", { form: data.source });
       return true;
     } catch (err) {
       statusEl.innerHTML = SEND_ERROR_HTML;

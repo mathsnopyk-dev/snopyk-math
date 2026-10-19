@@ -2,6 +2,19 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6CEEDRTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7C6CEEDRTM");
+  // Натискання на будь-яке посилання в Telegram рахуємо як звернення.
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="t.me/"]');
+    if (link) gtag("event", "contact_telegram", { link_url: link.href });
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Політика конфіденційності — snopyk.math</title>
 <meta name="description" content="Які дані збирає сайт snopyk.math, навіщо, де вони зберігаються і як їх видалити.">
@@ -69,9 +82,19 @@
 
       <h2 class="vacancy-subtitle">Що зберігає браузер</h2>
       <p>
-        Сайт запам'ятовує у вашому браузері лише дві технічні позначки: що ви вже
+        Сам сайт запам'ятовує у вашому браузері дві технічні позначки: що ви вже
         залишили заявку і що вікно із пропозицією запису вже показувалось. Це потрібно,
         щоб не показувати вам те саме повторно.
+      </p>
+
+      <h2 class="vacancy-subtitle">Статистика відвідувань</h2>
+      <p>
+        Ми використовуємо Google Analytics, щоб бачити загальну статистику: скільки людей
+        заходить на сайт, з яких пристроїв і звідки, які сторінки переглядають і скільки
+        заявок надсилають. Для цього Google зберігає у вашому браузері файли cookie.
+        Ми не бачимо, хто саме ви, і не передаємо в аналітику ваше ім'я чи телефон.
+        Вимкнути збір можна в налаштуваннях браузера або за допомогою
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">розширення від Google</a>.
       </p>
 
       <h2 class="vacancy-subtitle">Ваші права</h2>

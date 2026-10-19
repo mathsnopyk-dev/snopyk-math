@@ -2,6 +2,19 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6CEEDRTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7C6CEEDRTM");
+  // Натискання на будь-яке посилання в Telegram рахуємо як звернення.
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="t.me/"]');
+    if (link) gtag("event", "contact_telegram", { link_url: link.href });
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Тест рівня з математики — snopyk.math</title>
 <meta name="description" content="Безкоштовний тест рівня з математики для 7–11 класу: 5 запитань, миттєвий результат і поради, що повторити перед навчальним роком.">
@@ -206,6 +219,6 @@
 </div>
 
 <script src="js/test-data.js?v=20261009"></script>
-<script src="js/test.js?v=20260925b"></script>
+<script src="js/test.js?v=20261019"></script>
 </body>
 </html>

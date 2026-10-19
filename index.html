@@ -2,6 +2,19 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6CEEDRTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7C6CEEDRTM");
+  // Натискання на будь-яке посилання в Telegram рахуємо як звернення.
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="t.me/"]');
+    if (link) gtag("event", "contact_telegram", { link_url: link.href });
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>snopyk.math — репетитор математики онлайн, підготовка до НМТ</title>
 <meta name="description" content="Онлайн-репетитор математики snopyk.math: індивідуальні заняття для учнів 5–11 класів: закриваємо прогалини, готуємо до НМТ, математика за іноземною програмою та SAT. Діагностика рівня і звіти для батьків.">
@@ -698,6 +711,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20260925b"></script>
+<script src="js/main.js?v=20261019"></script>
 </body>
 </html>
