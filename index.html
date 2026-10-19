@@ -115,7 +115,7 @@
       "name": "Скільки триває заняття?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Заняття триває 55 хвилин. Формат обираєте самі — індивідуально або в парі з другом чи однокласником."
+        "text": "Заняття триває 55 хвилин. Формат обираєте самі — індивідуально, у парі з другом чи однокласником або в міні-групі."
       }
     },
     {
@@ -131,7 +131,7 @@
       "name": "Як формується вартість занять?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Вартість залежить від пакета: від 650 грн за урок у пакеті з 4 уроків до 550 грн за урок у пакеті з 32 уроків. Математика за іноземною програмою та SAT — за окремим прайсом. Пакет допоможемо обрати після діагностики."
+        "text": "Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі — від 300 грн з учня. Математика за іноземною програмою та SAT — за окремим прайсом. Формат допоможемо обрати після діагностики."
       }
     },
     {
@@ -148,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261019c">
+<link rel="stylesheet" href="css/style.css?v=20261020">
 </head>
 <body>
 
@@ -321,7 +321,7 @@
         <li class="step">
           <span class="step-num">3</span>
           <h3>Заняття по 55 хвилин</h3>
-          <p>Індивідуально або в парі з другом. Пояснюємо так, щоб дійшло, — і стільки разів, скільки треба.</p>
+          <p>Індивідуально, у парі або в міні-групі. Пояснюємо так, щоб дійшло, — і стільки разів, скільки треба.</p>
         </li>
         <li class="step">
           <span class="step-num">4</span>
@@ -462,47 +462,33 @@
       <p class="section-eyebrow">Ціни</p>
       <h2 class="section-title">Прозора вартість занять</h2>
       <p class="section-lead">
-        Урок триває 55 хвилин. Чим більший пакет — тим дешевший кожен урок.
-        Не знаєте, що обрати? Підкажемо після діагностики, коли побачимо рівень і мету.
+        Урок триває 55 хвилин. Обирайте формат, а розклад і кількість занять підкажемо після діагностики,
+        коли побачимо рівень і мету.
       </p>
 
-      <ul class="plan-grid">
-        <li class="plan-card">
-          <h3 class="plan-name">4 уроки</h3>
-          <p class="plan-sub">Для старту</p>
-          <p class="plan-total">2 600 <span>грн</span></p>
-          <p class="plan-per">650 грн за урок</p>
-          <p class="plan-save plan-save-empty" aria-hidden="true">&nbsp;</p>
-          <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Обрати пакет</button>
+      <ul class="format-price-grid">
+        <li class="format-price">
+          <h3>Індивідуально</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 550 <span class="format-price-unit">грн / урок</span></p>
+          <p>Лише учень і викладач. Темп і пояснення повністю під дитину.</p>
         </li>
-        <li class="plan-card plan-card-popular">
-          <span class="plan-badge">Найчастіше обирають</span>
-          <h3 class="plan-name">8 уроків</h3>
-          <p class="plan-sub">Основний пакет</p>
-          <p class="plan-total">4 960 <span>грн</span></p>
-          <p class="plan-per">620 грн за урок</p>
-          <p class="plan-save">економія 240 грн</p>
-          <button type="button" class="btn btn-primary btn-block js-open-modal">Обрати пакет</button>
+        <li class="format-price">
+          <h3>У парі</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 450 <span class="format-price-unit">грн / урок</span></p>
+          <p>Удвох з другом чи однокласником — разом веселіше і дешевше. Ціна за одного учня.</p>
         </li>
-        <li class="plan-card">
-          <h3 class="plan-name">16 уроків</h3>
-          <p class="plan-sub">На 2 місяці</p>
-          <p class="plan-total">9 440 <span>грн</span></p>
-          <p class="plan-per">590 грн за урок</p>
-          <p class="plan-save">економія 960 грн</p>
-          <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Обрати пакет</button>
-        </li>
-        <li class="plan-card">
-          <h3 class="plan-name">32 уроки</h3>
-          <p class="plan-sub">Довгострокове навчання</p>
-          <p class="plan-total">17 600 <span>грн</span></p>
-          <p class="plan-per">550 грн за урок</p>
-          <p class="plan-save">економія 3 200 грн</p>
-          <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Обрати пакет</button>
+        <li class="format-price">
+          <h3>Міні-група</h3>
+          <p class="format-price-value"><span class="format-price-from">від</span> 300 <span class="format-price-unit">грн / урок</span></p>
+          <p>Невелика група учнів з однаковою метою. Найдоступніший формат. Ціна за одного учня.</p>
         </li>
       </ul>
 
       <p class="pricing-note">Ціни — для української шкільної програми та підготовки до НМТ. Математика за іноземною програмою та SAT — вартість за запитом.</p>
+
+      <div class="section-cta">
+        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
+      </div>
     </div>
   </section>
 
@@ -577,7 +563,7 @@
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <p>Заняття триває 55 хвилин. Формат обираєте самі — індивідуально або в парі з другом чи однокласником.</p>
+            <p>Заняття триває 55 хвилин. Формат обираєте самі — індивідуально, у парі з другом чи однокласником або в міні-групі.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -595,7 +581,7 @@
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <p>Вартість залежить від пакета: від 650 грн за урок у пакеті з 4 уроків до 550 грн за урок у пакеті з 32 уроків. Математика за іноземною програмою та SAT — за окремим прайсом. Пакет допоможемо обрати після діагностики.</p>
+            <p>Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі — від 300 грн з учня. Математика за іноземною програмою та SAT — за окремим прайсом. Формат допоможемо обрати після діагностики.</p>
           </div>
         </div>
         <div class="faq-item">
