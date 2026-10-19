@@ -456,6 +456,7 @@ h1, h2, h3, p { margin: 0; }
 }
 .pain-emoji { font-size: 1.6rem; line-height: 1; }
 .pain-card p { font-weight: 600; font-size: 1rem; }
+.pain-outro a { color: var(--color-primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .pain-outro {
   margin-top: var(--space-6);
   max-width: 62ch;
