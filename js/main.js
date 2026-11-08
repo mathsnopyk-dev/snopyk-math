@@ -375,3 +375,24 @@
   window.addEventListener("resize", onScroll);
   update();
 })();
+
+/* ---------- "Як це працює": example sheet (plan / report) on phones ---------- */
+(function () {
+  const sheet = document.getElementById("example-sheet");
+  if (!sheet || typeof sheet.showModal !== "function") return;
+  const body = sheet.querySelector(".example-sheet-body");
+  document.querySelectorAll(".how-example-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = document.querySelector('[data-example-src="' + btn.dataset.example + '"]');
+      if (!src) return;
+      body.innerHTML = "";
+      const copy = src.cloneNode(true);
+      copy.removeAttribute("data-example-src");
+      copy.classList.remove("how-aside");
+      body.appendChild(copy);
+      sheet.showModal();
+    });
+  });
+  sheet.querySelector(".example-sheet-close").addEventListener("click", () => sheet.close());
+  sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.close(); });
+})();

@@ -16,6 +16,7 @@
   --color-text-muted: #52607a;
 
   --color-accent-gold: #f5a623;
+  --color-accent-lime: #c7f36b; /* brand lime */
   --color-success: #1fae6b;
   --color-danger: #e5484d;
 
@@ -811,8 +812,8 @@ h1, h2, h3, p { margin: 0; }
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--color-accent-gold);
-  color: #3b2600;
+  background: var(--color-accent-lime);
+  color: #1d2b05;
   font-size: 0.75rem;
   font-weight: 800;
   display: flex;
@@ -934,8 +935,8 @@ h1, h2, h3, p { margin: 0; }
   position: absolute;
   top: -14px;
   right: var(--space-5);
-  background: var(--color-accent-gold);
-  color: #3b2600;
+  background: var(--color-accent-lime);
+  color: #1d2b05;
   font-size: 0.75rem;
   font-weight: 800;
   padding: 5px 12px;
@@ -1437,10 +1438,10 @@ body.nav-open { overflow: hidden; }
 }
 
 .hl {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 3.5 90 2.5 130 4.5S185 8 198 5' fill='none' stroke='%23f5a623' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 3.5 90 2.5 130 4.5S185 8 198 5' fill='none' stroke='%23c7f36b' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 100% 0.32em;
+  background-size: 100% 0.4em;
   padding-bottom: 0.06em;
 }
 
@@ -1463,3 +1464,136 @@ body.nav-open { overflow: hidden; }
   .case-featured-main { flex: 0 0 auto; min-width: 220px; }
   .case-featured-quote { flex: 1; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: var(--space-7); }
 }
+
+/* ===================== HOW IT WORKS: phone = swipe cards ===================== */
+.how-short, .how-example-btn, .how-swipe-hint { display: none; }
+.how-example-btn {
+  margin-top: var(--space-4);
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+@media (max-width: 759px) {
+  .how-flow {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-4);
+    margin-inline: calc(var(--space-5) * -1);
+    padding: 10px var(--space-5) var(--space-3);
+    scroll-padding-inline: var(--space-5);
+    scrollbar-width: none;
+  }
+  .how-flow::-webkit-scrollbar { display: none; }
+  .how-flow .how-item,
+  .how-flow.is-live .how-item {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    align-content: start;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    opacity: 1;
+  }
+  .how-item::before, .how-item::after { display: none !important; }
+  .how-flow.is-live .how-item:not(.is-reached) .how-num {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 0 0 4px var(--color-primary-tint);
+  }
+  .how-flow.is-live .how-item.is-current .how-num { transform: none; }
+  .how-body > .how-aside { display: none; }
+  .how-text > :not(.how-step-label):not(h3):not(.how-short):not(.how-example-btn) { display: none; }
+  .how-short { display: block; color: var(--color-text-muted); font-size: 0.95rem; }
+  .how-example-btn { display: inline-flex; }
+  .how-swipe-hint { display: block; font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); margin-top: var(--space-2); }
+  #how .section-cta { margin-top: var(--space-5); }
+}
+
+/* Example (plan / report) sheet */
+.example-sheet {
+  border: none;
+  padding: var(--space-6) var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  background: var(--color-bg-alt);
+}
+.example-sheet::backdrop { background: rgba(1, 24, 64, 0.55); }
+.example-sheet .report-card { transform: none; max-width: none; margin-top: var(--space-3); box-shadow: var(--shadow-sm); }
+.example-sheet-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-surface);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* ===================== HERO STAT CHIPS (next to the photo) ===================== */
+.hero-chip {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: var(--color-text);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 28px rgba(0, 12, 40, 0.28);
+  white-space: nowrap;
+  animation: chip-float 5s ease-in-out infinite;
+}
+.hero-chip-1 { left: 0; top: 14%; }
+.hero-chip-2 { right: 0; top: 44%; animation-delay: -1.7s; }
+.hero-chip-3 { left: 4%; bottom: 10%; animation-delay: -3.3s; }
+@keyframes chip-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (max-width: 859px) { .hero-photo { position: relative; } }
+@media (min-width: 860px) {
+  .hero-chip-1 { left: -40px; top: 22%; }
+  .hero-chip-2 { right: -10px; top: 50%; }
+  .hero-chip-3 { left: -20px; bottom: 12%; }
+}
+
+/* ===================== STEP 3 LESSON PHOTO ===================== */
+.how-photo { margin: 0; }
+.how-photo img { width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.how-photo figcaption { font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-3); }
+
+/* ===================== DARK RESULTS SECTION ===================== */
+.section-dark { background: linear-gradient(165deg, var(--color-primary-darker) 0%, #011a3d 100%); color: #fff; }
+.section-dark .section-eyebrow { color: #fff; background: rgba(255, 255, 255, 0.14); }
+.section-dark .section-title { color: #fff; }
+.section-dark .section-lead { color: rgba(255, 255, 255, 0.78); }
+.section-dark .case-card { border-color: transparent; box-shadow: 0 16px 40px rgba(0, 8, 30, 0.35); }
+.section-dark .case-featured {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+.subsection-first { margin-top: 0; }
+
+/* ===================== 3D STICKER ICONS ===================== */
+img.pain-emoji { width: 44px; height: 44px; flex: 0 0 auto; }
+.audience-icon { background: var(--color-primary-tint); }
+.audience-icon img { width: 40px; height: 40px; }

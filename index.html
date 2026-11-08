@@ -148,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261108f">
+<link rel="stylesheet" href="css/style.css?v=20261108l">
 </head>
 <body>
 
@@ -226,6 +226,9 @@
           <source srcset="assets/images/founder-photo.webp" type="image/webp">
           <img src="assets/images/founder-photo.png" alt="Викладачка snopyk.math" width="832" height="900" fetchpriority="high">
         </picture>
+        <span class="hero-chip hero-chip-1">🏆 184 бали НМТ</span>
+        <span class="hero-chip hero-chip-2">👩‍🎓 150+ учнів</span>
+        <span class="hero-chip hero-chip-3">📊 Звіт щомісяця</span>
       </div>
     </div>
   </section>
@@ -317,6 +320,7 @@
             <div class="how-text">
               <p class="how-step-label">Крок 1</p>
               <h3>Урок-діагностика</h3>
+              <p class="how-short">45–55 хв онлайн, 300 грн. Знайомимось, робимо короткий тест і знаходимо, де саме прогалини. Того ж дня ви отримуєте висновки й рекомендації.</p>
               <p>Перший урок — з викладачем, якого ми підібрали саме під дитину.</p>
               <ul class="how-chips" role="list">
                 <li>⏱ 45–55 хв онлайн</li>
@@ -349,6 +353,8 @@
             <div class="how-text">
               <p class="how-step-label">Крок 2</p>
               <h3>Особистий план і свій викладач</h3>
+              <p class="how-short">Викладач розписує, чого і до коли досягаємо, які теми головні зараз і що повторити з минулих класів.</p>
+              <button type="button" class="how-example-btn" data-example="plan">Подивитись приклад →</button>
               <p>Після діагностики викладач розписує план навчання під вашу мету — школа, НМТ чи іноземна програма:</p>
               <ul class="check-list how-list">
                 <li>чого і до коли плануємо досягти</li>
@@ -360,7 +366,7 @@
               <p class="how-note">Щомісяця звіряємось із планом у звіті й за потреби коригуємо. Викладача підбираємо під клас, тему, характер дитини і ваш розклад, а якщо не підійшов — замінимо без зайвих питань.</p>
             </div>
 
-            <figure class="how-aside report-card plan-card" aria-label="Приклад плану навчання">
+            <figure class="how-aside report-card plan-card" data-example-src="plan" aria-label="Приклад плану навчання">
               <span class="report-sample">Приклад · ім'я змінено</span>
               <header class="report-head">
                 <span class="report-avatar" aria-hidden="true">📋</span>
@@ -396,22 +402,27 @@
         <!-- 3. Lessons -->
         <li class="how-item">
           <span class="how-num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6.5" width="12.5" height="11" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 10.5 5-3v9l-5-3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><b>3</b></span>
-          <div class="how-body">
+          <div class="how-body how-body-aside">
             <div class="how-text">
               <p class="how-step-label">Крок 3</p>
               <h3>Заняття по 55 хвилин</h3>
+              <p class="how-short">Індивідуально, у парі чи в міні-групі. Домашні, записи уроків і всі матеріали — на навчальній платформі.</p>
               <p>Індивідуально, у парі або в міні-групі. Пояснюємо так, щоб дійшло, — і стільки разів, скільки треба.</p>
               <div class="how-platform">
                 <strong>📚 Усе на навчальній платформі</strong>
                 <p>Домашні завдання, записи уроків і всі матеріали зберігаються на платформі, доступ до якої ви отримуєте після старту. Пропустили урок чи забули тему — можна будь-коли переглянути пояснення ще раз.</p>
               </div>
-              <ul class="check-list how-list how-list-2col">
+              <ul class="check-list how-list">
                 <li>Уроки в Zoom, пояснення — на дошці Miro дитини</li>
                 <li>Домашнє після кожного уроку — викладач його перевіряє</li>
                 <li>Окремий чат у Telegram з викладачем і менеджером</li>
                 <li>Розклад та історія занять — в особистому кабінеті</li>
               </ul>
             </div>
+            <figure class="how-aside how-photo">
+              <img src="assets/images/lesson-laptop.jpg" alt="Урок snopyk.math: дошка Miro з розминкою для мозку і відеозв'язок з учнем" width="1000" height="750" loading="lazy">
+              <figcaption>Так виглядає урок: відеозв'язок і дошка Miro, де зберігається все пройдене</figcaption>
+            </figure>
           </div>
         </li>
 
@@ -422,6 +433,8 @@
             <div class="how-text">
               <p class="how-step-label">Крок 4</p>
               <h3>Звіт для батьків щомісяця</h3>
+              <p class="how-short">Щомісяця в Telegram: що пройшли, що вже виходить, над чим працюємо і скільки домашніх здано.</p>
+              <button type="button" class="how-example-btn" data-example="report">Подивитись приклад →</button>
               <p>Не треба вгадувати за оцінками, що відбувається на уроках. Наприкінці кожного місяця викладач надсилає вам у Telegram короткий звіт:</p>
               <ul class="check-list how-list">
                 <li>що пройшли за місяць</li>
@@ -433,7 +446,7 @@
               <p class="how-note">Будь-яке питання між звітами — напишіть менеджеру в Telegram.</p>
             </div>
 
-            <figure class="how-aside report-card" aria-label="Приклад щомісячного звіту для батьків">
+            <figure class="how-aside report-card" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
               <span class="report-sample">Приклад · ім'я змінено</span>
               <header class="report-head">
                 <span class="report-avatar" aria-hidden="true">І</span>
@@ -466,12 +479,18 @@
           </div>
         </li>
       </ol>
+      <p class="how-swipe-hint" aria-hidden="true">Гортайте вбік →</p>
 
       <div class="section-cta">
         <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
       </div>
     </div>
   </section>
+
+  <dialog class="example-sheet" id="example-sheet" aria-label="Приклад">
+    <button type="button" class="example-sheet-close" aria-label="Закрити">&times;</button>
+    <div class="example-sheet-body"></div>
+  </dialog>
 
   <!-- ===== SITUATIONS ===== -->
   <section class="section section-alt" id="audience">
@@ -547,8 +566,8 @@
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="section section-alt" id="testimonials">
+  <!-- ===== RESULTS ===== -->
+  <section class="section section-dark" id="results">
     <div class="container">
       <p class="section-eyebrow">Результати учнів</p>
       <h2 class="section-title">Було → <span class="hl">стало</span> <img class="sticker" src="assets/stickers/trophy.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
@@ -639,8 +658,13 @@
           <p class="case-quote">«Дякую вам велике за той час, який був, — дуже цікаво і класно було».</p>
         </li>
       </ul>
+    </div>
+  </section>
 
-      <h3 class="subsection-title" id="reviews">Що пишуть учні й батьки <img class="sticker" src="assets/stickers/speech_balloon.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h3>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section section-alt" id="testimonials">
+    <div class="container">
+      <h3 class="subsection-title subsection-first" id="reviews">Що пишуть учні й батьки <img class="sticker" src="assets/stickers/speech_balloon.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h3>
       <p class="subsection-lead">Повідомлення з наших чатів — як їх написали, лише скорочено.</p>
 
       <div class="review-tabs" role="tablist" aria-label="Чиї відгуки показати">
@@ -1008,7 +1032,7 @@
           <li><a href="/#how">Як це працює</a></li>
           <li><a href="/#about">Про школу</a></li>
           <li><a href="/#pricing">Ціни</a></li>
-          <li><a href="/#testimonials">Результати учнів</a></li>
+          <li><a href="/#results">Результати учнів</a></li>
           <li><a href="/#reviews">Відгуки</a></li>
           <li><a href="/#faq">Питання й відповіді</a></li>
         </ul>
@@ -1079,6 +1103,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261108b"></script>
+<script src="js/main.js?v=20261108c"></script>
 </body>
 </html>
