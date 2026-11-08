@@ -314,4 +314,64 @@
 
   handleSubmit(document.getElementById("lead-form-main"));
   handleSubmit(document.getElementById("lead-form-modal"));
+
+  /* ---------- Reviews: students / parents tabs ---------- */
+  const reviewTabs = Array.from(document.querySelectorAll(".review-tab"));
+  function selectReviewTab(tab) {
+    reviewTabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (panel) panel.hidden = !on;
+    });
+  }
+  reviewTabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => selectReviewTab(tab));
+    tab.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const next = reviewTabs[(i + (e.key === "ArrowRight" ? 1 : -1) + reviewTabs.length) % reviewTabs.length];
+      selectReviewTab(next);
+      next.focus();
+    });
+  });
+})();
+
+/* ---------- "Як це працює": steps light up while scrolling ---------- */
+(function () {
+  const flow = document.querySelector(".how-flow");
+  if (!flow) return;
+  const items = Array.from(flow.querySelectorAll(".how-item"));
+  flow.classList.add("is-live");
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const trigger = window.innerHeight * 0.55;
+    let current = -1;
+    items.forEach((item, i) => {
+      const tile = item.querySelector(".how-num").getBoundingClientRect();
+      const reached = tile.top < trigger;
+      item.classList.toggle("is-reached", reached);
+      if (reached) current = i;
+      const next = items[i + 1];
+      if (next) {
+        const nextTop = next.querySelector(".how-num").getBoundingClientRect().top;
+        const span = nextTop - tile.bottom;
+        const fill = span > 0 ? (trigger - tile.bottom) / span : 0;
+        item.style.setProperty("--fill", Math.min(1, Math.max(0, fill)).toFixed(3));
+      }
+    });
+    items.forEach((item, i) => item.classList.toggle("is-current", i === current));
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
 })();
