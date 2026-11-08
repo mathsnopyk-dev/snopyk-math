@@ -148,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261108l">
+<link rel="stylesheet" href="css/style.css?v=20261109b">
 </head>
 <body>
 
@@ -204,31 +204,40 @@
     <div class="hero-watermark" aria-hidden="true">snopyk.math</div>
     <div class="container hero-grid">
       <div class="hero-inner">
-        <p class="eyebrow">Репетитор математики онлайн · 5–11 клас · НМТ</p>
+        <p class="hero-badge">Онлайн-школа математики · 5–11 клас · НМТ</p>
         <h1>Дитина плутається в&nbsp;математиці, а&nbsp;ви вже не&nbsp;знаєте, як <span class="hl hl-gold">допомогти?</span></h1>
         <p class="hero-lead">
-          Знайдемо, де саме прогалини, закриємо їх і підготуємо до НМТ — спокійно,
-          без сліз над домашкою. Ви бачитимете прогрес у звітах, а не лише в оцінках.
+          Знайдемо, де саме <strong>прогалини</strong>, закриємо їх і підготуємо до НМТ —
+          <strong>спокійно, без сліз</strong> над домашкою. Ви бачитимете прогрес у <strong>щомісячних звітах</strong>,
+          а не лише в оцінках.
         </p>
         <div class="hero-actions">
-          <button type="button" class="btn btn-white btn-lg js-open-modal">Записатись на діагностику</button>
-          <a href="#how" class="btn btn-outline-white btn-lg">Як це працює</a>
+          <button type="button" class="btn btn-white btn-lg btn-hero js-open-modal">
+            <span>Записатись<br>на діагностику</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="btn-tag">перший крок</span>
+          </button>
+          <a href="#how" class="btn btn-outline-white btn-lg btn-hero"><span>Як проходить<br>навчання</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
-        <ul class="hero-points">
+        <p class="hero-note"><span class="hero-dot" aria-hidden="true"></span>Для учнів 5–11 класів · онлайн з будь-якої країни</p>
+        <ul class="hero-points hero-points-mobile">
           <li>Перший урок — діагностика рівня</li>
-          <li>Звіти про прогрес для батьків</li>
+          <li>Звіт для батьків щомісяця</li>
           <li>Не підійшов викладач — замінимо</li>
         </ul>
       </div>
       <div class="hero-photo">
-        <img class="sticker sticker-float sticker-hero" src="assets/stickers/sparkles.png" alt="" aria-hidden="true" width="90" height="90">
         <picture>
           <source srcset="assets/images/founder-photo.webp" type="image/webp">
-          <img src="assets/images/founder-photo.png" alt="Викладачка snopyk.math" width="832" height="900" fetchpriority="high">
+          <img src="assets/images/founder-photo.png" alt="Ірина Снопик, засновниця snopyk.math" width="832" height="900" fetchpriority="high">
         </picture>
         <span class="hero-chip hero-chip-1">🏆 184 бали НМТ</span>
         <span class="hero-chip hero-chip-2">👩‍🎓 150+ учнів</span>
-        <span class="hero-chip hero-chip-3">📊 Звіт щомісяця</span>
+        <ul class="hero-checks" aria-hidden="true">
+          <li>Перший урок — діагностика рівня</li>
+          <li>Звіт для батьків щомісяця</li>
+          <li>Записи уроків і матеріали на платформі</li>
+          <li>Не підійшов викладач — замінимо</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -237,9 +246,9 @@
   <section class="section" id="pains">
     <div class="container">
       <p class="section-eyebrow">Впізнаєте себе?</p>
-      <h2 class="section-title">Найчастіше батьки приходять до нас, коли… <img class="sticker" src="assets/stickers/thinking_face.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
+      <h2 class="section-title">Найчастіше батьки приходять до нас, коли…</h2>
 
-      <ul class="pain-grid">
+      <ul class="pain-grid m-swipe">
         <li class="pain-card">
           <span class="pain-emoji" aria-hidden="true">😩</span>
           <p>«Сидимо над домашкою до ночі, а закінчується все сльозами й сваркою»</p>
@@ -498,7 +507,7 @@
       <p class="section-eyebrow">Оберіть свою ситуацію</p>
       <h2 class="section-title">Під кожну мету — <span class="hl">своя програма</span> <img class="sticker" src="assets/stickers/rocket.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
 
-      <div class="cards-grid situation-grid">
+      <div class="cards-grid situation-grid m-swipe">
         <article class="audience-card">
           <div class="audience-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 13l2.5 2.5L16 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -573,7 +582,7 @@
       <h2 class="section-title">Було → <span class="hl">стало</span> <img class="sticker" src="assets/stickers/trophy.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
       <p class="section-lead">Реальні бали наших учнів — і що вони самі про це написали.</p>
 
-      <ul class="cases-grid" role="list">
+      <ul class="cases-grid m-swipe" role="list">
         <li class="case-card case-featured">
           <div class="case-featured-main">
             <div class="case-top">

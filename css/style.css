@@ -1597,3 +1597,138 @@ body.nav-open { overflow: hidden; }
 img.pain-emoji { width: 44px; height: 44px; flex: 0 0 auto; }
 .audience-icon { background: var(--color-primary-tint); }
 .audience-icon img { width: 40px; height: 40px; }
+
+/* ===================== HERO v2: badge, rich lead, arrow buttons, checks card ===================== */
+.hero-badge {
+  display: inline-block;
+  background: #fff;
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-5);
+  box-shadow: 0 8px 20px rgba(0, 12, 40, 0.18);
+}
+.hero-lead strong { color: #fff; font-weight: 800; }
+.hero-actions { margin-bottom: var(--space-4); align-items: stretch; }
+.btn-hero {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: left;
+  line-height: 1.2;
+  padding: 14px 14px 14px 26px;
+  border-radius: 22px;
+  font-size: 1.02rem;
+}
+.btn-arrow {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms var(--ease);
+}
+.btn-arrow svg { width: 22px; height: 22px; }
+.btn-white .btn-arrow { background: var(--color-primary); color: #fff; }
+.btn-outline-white .btn-arrow { background: #fff; color: var(--color-primary); }
+.btn-hero:hover .btn-arrow { transform: translateX(4px); }
+.btn-tag {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: var(--color-primary-darker);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  transform: rotate(4deg);
+  box-shadow: 0 4px 10px rgba(0, 12, 40, 0.2);
+}
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero-dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2); }
+
+/* soft circle behind the cutout photo for depth */
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 92%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04) 70%);
+  z-index: 0;
+}
+.hero-photo picture img { position: relative; z-index: 1; }
+
+/* white checklist card over the photo (desktop) */
+.hero-checks {
+  position: absolute;
+  z-index: 3;
+  left: -150px;
+  bottom: 18px;
+  background: #fff;
+  color: var(--color-text);
+  border-radius: 20px;
+  padding: var(--space-4) var(--space-5);
+  box-shadow: 0 20px 40px rgba(0, 12, 40, 0.3);
+  display: none;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 0.86rem;
+  font-weight: 700;
+  max-width: 290px;
+}
+.hero-checks li { position: relative; padding-left: 28px; }
+.hero-checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--color-primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m6 12.5 4 4 8-9' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+@media (min-width: 1100px) {
+  .hero-checks { display: flex; }
+  .hero-points-mobile { display: none; }
+  .hero-chip-1 { left: auto; right: -34px; top: 10%; }
+  .hero-chip-2 { left: auto; right: -34px; top: 26%; }
+}
+@media (max-width: 560px) {
+  .hero-actions { flex-direction: column; }
+  .btn-hero { justify-content: space-between; width: 100%; }
+}
+
+/* ===================== PHONES: long lists scroll sideways ===================== */
+@media (max-width: 759px) {
+  .m-swipe {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-4);
+    margin-inline: calc(var(--space-5) * -1);
+    padding: 6px var(--space-5) var(--space-3);
+    scroll-padding-inline: var(--space-5);
+    scrollbar-width: none;
+  }
+  .m-swipe::-webkit-scrollbar { display: none; }
+  .m-swipe > * { flex: 0 0 82%; scroll-snap-align: start; min-width: 0; }
+  .m-swipe > .case-featured { flex-basis: 86%; flex-direction: column; }
+  .pain-grid.m-swipe > * { flex-basis: 74%; background: var(--color-surface); border: 1px solid var(--color-border); }
+}
