@@ -148,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261109c">
+<link rel="stylesheet" href="css/style.css?v=20261109g">
 </head>
 <body>
 
@@ -245,32 +245,34 @@
   <!-- ===== PAINS ===== -->
   <section class="section" id="pains">
     <div class="container">
-      <p class="section-eyebrow">Впізнаєте себе?</p>
-      <h2 class="section-title">Найчастіше батьки приходять до нас, коли…</h2>
+      <div class="pains-head">
+        <h2 class="section-title">Вам до нас, <span class="hl">якщо…</span></h2>
+        <a href="#lead-form" class="pains-link js-open-modal">Впізнали себе? Почніть з діагностики <span aria-hidden="true">→</span></a>
+      </div>
 
       <ul class="pain-grid m-swipe">
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">😩</span>
+          <span class="pain-chip" aria-hidden="true">23:47 · ще 5 задач</span>
           <p>«Сидимо над домашкою до ночі, а закінчується все сльозами й сваркою»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">📉</span>
+          <span class="pain-chip" aria-hidden="true">10 → 8 → 6</span>
           <p>«Оцінки падають, а я сама не розумію, як зараз пояснюють за НУШ»</p>
         </li>
-        <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">⏳</span>
+        <li class="pain-card pain-card-hit">
+          <span class="pain-badge">НМТ</span><span class="pain-chip" aria-hidden="true">НМТ − 365 днів</span>
           <p>«До НМТ лишився рік, а від балу залежить, чи буде бюджет»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">💸</span>
+          <span class="pain-chip" aria-hidden="true">₴ + ₴ + ₴ = ?</span>
           <p>«Вже платили репетитору, а що змінилось — незрозуміло»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">🧩</span>
+          <span class="pain-chip" aria-hidden="true">x² + ? = ?</span>
           <p>«Через тривоги й дистанційку пропущено цілі теми — і далі все сиплеться»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">🌍</span>
+          <span class="pain-chip" aria-hidden="true">UA ⇄ PL ⇄ DE</span>
           <p>«Живемо за кордоном: дитина між двома програмами й двома мовами»</p>
         </li>
       </ul>
@@ -841,33 +843,142 @@
     <div class="container">
       <p class="section-eyebrow">Ціни</p>
       <h2 class="section-title"><span class="hl">Прозора</span> вартість занять <img class="sticker" src="assets/stickers/money_bag.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
-      <p class="section-lead">
-        Урок триває 55 хвилин. Обирайте формат, а розклад і кількість занять підкажемо після діагностики,
-        коли побачимо рівень і мету.
-      </p>
+      <p class="section-lead">Урок триває 55 хвилин. Чим більший пакет — тим дешевший кожен урок. Що обрати, підкажемо після діагностики.</p>
 
-      <ul class="format-price-grid">
-        <li class="format-price">
-          <h3>Індивідуально</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 550 <span class="format-price-unit">грн / урок</span></p>
-          <p>Лише учень і викладач. Темп і пояснення повністю під дитину.</p>
-        </li>
-        <li class="format-price">
-          <h3>У парі</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 450 <span class="format-price-unit">грн / урок</span></p>
-          <p>Удвох з другом чи однокласником — разом веселіше і дешевше. Ціна за одного учня.</p>
-        </li>
-        <li class="format-price">
-          <h3>Міні-група</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 300 <span class="format-price-unit">грн / урок</span></p>
-          <p>До 6 учнів з однаковою метою. Найдоступніший формат. Ціна за одного учня.</p>
-        </li>
-      </ul>
+      <div class="ptabs ptabs-main" role="tablist" aria-label="Напрям">
+        <button type="button" role="tab" class="ptab" aria-selected="true" aria-controls="pp-math" id="pt-math">Математика й НМТ</button>
+        <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-higher" id="pt-higher" tabindex="-1">Вища математика</button>
+        <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-foreign" id="pt-foreign" tabindex="-1">SAT, Matura та іноземні іспити</button>
+      </div>
 
-      <p class="pricing-note">Ціни — для української шкільної програми та підготовки до НМТ. Математика за іноземною програмою та SAT — вартість за запитом.</p>
+      <div class="ppanel" role="tabpanel" id="pp-math" aria-labelledby="pt-math">
+        <div class="ptabs ptabs-format" role="tablist" aria-label="Формат">
+          <button type="button" role="tab" class="ptab" aria-selected="true" aria-controls="pp-ind" id="pt-ind"><b>Індивідуально</b><small>1 учень</small></button>
+          <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-pair" id="pt-pair" tabindex="-1"><b>У парі</b><small>ціна за учня</small></button>
+          <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-group" id="pt-group" tabindex="-1"><b>Міні-група</b><small>до 6 учнів</small></button>
+        </div>
 
-      <div class="section-cta">
-        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
+        <div class="ppanel" role="tabpanel" id="pp-ind" aria-labelledby="pt-ind">
+          <ul class="price-grid m-swipe" role="list">
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">4</span><span class="price-word">уроки</span><span class="price-tag">Старт</span></div>
+            <p class="price-sub">для старту</p>
+            <p class="price-per"><b>650</b> грн/урок</p>
+            <p class="price-total"><b>2 600 грн</b></p>
+            <span class="price-save price-save-empty">&nbsp;</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card price-card-hit">
+            <span class="price-badge">★ обирають найчастіше</span>
+            <div class="price-head"><span class="price-count">8</span><span class="price-word">уроків</span><span class="price-tag">Оптимум</span></div>
+            <p class="price-sub">основний пакет</p>
+            <p class="price-per"><b>620</b> грн/урок</p>
+            <p class="price-total"><s>5 200</s> <b>4 960 грн</b></p>
+            <span class="price-save">економія 240 грн</span>
+            <button type="button" class="btn btn-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">16</span><span class="price-word">уроків</span><span class="price-tag">Стабільний</span></div>
+            <p class="price-sub">на 2 місяці</p>
+            <p class="price-per"><b>590</b> грн/урок</p>
+            <p class="price-total"><s>10 400</s> <b>9 440 грн</b></p>
+            <span class="price-save">економія 960 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            <span class="price-badge price-badge-alt">максимальна вигода</span>
+            <div class="price-head"><span class="price-count">32</span><span class="price-word">уроки</span><span class="price-tag">Максимум</span></div>
+            <p class="price-sub">довгострокове навчання</p>
+            <p class="price-per"><b>550</b> грн/урок</p>
+            <p class="price-total"><s>20 800</s> <b>17 600 грн</b></p>
+            <span class="price-save">економія 3 200 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          </ul>
+        </div>
+        <div class="ppanel" role="tabpanel" id="pp-pair" aria-labelledby="pt-pair" hidden>
+          <ul class="price-grid m-swipe" role="list">
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">4</span><span class="price-word">уроки</span><span class="price-tag">Старт</span></div>
+            <p class="price-sub">для старту</p>
+            <p class="price-per"><b>500</b> грн/урок</p>
+            <p class="price-total"><b>2 000 грн</b></p>
+            <span class="price-save price-save-empty">&nbsp;</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card price-card-hit">
+            <span class="price-badge">★ обирають найчастіше</span>
+            <div class="price-head"><span class="price-count">8</span><span class="price-word">уроків</span><span class="price-tag">Оптимум</span></div>
+            <p class="price-sub">основний пакет</p>
+            <p class="price-per"><b>480</b> грн/урок</p>
+            <p class="price-total"><s>4 000</s> <b>3 840 грн</b></p>
+            <span class="price-save">економія 160 грн</span>
+            <button type="button" class="btn btn-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">16</span><span class="price-word">уроків</span><span class="price-tag">Стабільний</span></div>
+            <p class="price-sub">на 2 місяці</p>
+            <p class="price-per"><b>465</b> грн/урок</p>
+            <p class="price-total"><s>8 000</s> <b>7 440 грн</b></p>
+            <span class="price-save">економія 560 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            <span class="price-badge price-badge-alt">максимальна вигода</span>
+            <div class="price-head"><span class="price-count">32</span><span class="price-word">уроки</span><span class="price-tag">Максимум</span></div>
+            <p class="price-sub">довгострокове навчання</p>
+            <p class="price-per"><b>450</b> грн/урок</p>
+            <p class="price-total"><s>16 000</s> <b>14 400 грн</b></p>
+            <span class="price-save">економія 1 600 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          </ul>
+          <p class="pricing-note">Удвох з другом чи однокласником — разом веселіше і дешевше. Ціна вказана за одного учня.</p>
+        </div>
+        <div class="ppanel" role="tabpanel" id="pp-group" aria-labelledby="pt-group" hidden>
+          <div class="price-month">
+            <div>
+              <p class="price-month-label">Міні-група · до 6 учнів з однаковою метою</p>
+              <p class="price-per"><b>2&nbsp;400</b> грн/місяць</p>
+              <p class="price-sub">Найдоступніший формат. Оплата раз на місяць — до 3 числа.</p>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись →</button>
+          </div>
+        </div>
+
+        <ul class="price-includes" role="list">
+          <li>Урок 55 хвилин онлайн</li>
+          <li>Домашні з перевіркою викладача</li>
+          <li>Записи уроків і матеріали на платформі</li>
+          <li>Звіт для батьків щомісяця</li>
+        </ul>
+        <p class="pricing-note">Ціни — для української шкільної програми та підготовки до НМТ. Перший урок-діагностика — 300 грн.</p>
+      </div>
+
+      <div class="ppanel" role="tabpanel" id="pp-higher" aria-labelledby="pt-higher" hidden>
+        <div class="price-month">
+          <div>
+            <p class="price-month-label">Вища математика · для студентів і старшокласників</p>
+            <p class="price-per"><b>За запитом</b></p>
+            <p class="price-sub">Вартість залежить від курсу і теми. Напишіть, що вивчаєте, — підберемо викладача і назвемо ціну.</p>
+          </div>
+          <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Дізнатись ціну →</a>
+        </div>
+      </div>
+
+      <div class="ppanel" role="tabpanel" id="pp-foreign" aria-labelledby="pt-foreign" hidden>
+        <div class="price-month">
+          <div>
+            <p class="price-month-label">SAT, Matura, IB та математика за іноземною програмою</p>
+            <p class="price-per"><b>За запитом</b></p>
+            <p class="price-sub">Вартість залежить від іспиту, програми і терміну. Напишіть нам — назвемо ціну після короткої розмови.</p>
+          </div>
+          <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Дізнатись ціну →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1112,6 +1223,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261108c"></script>
+<script src="js/main.js?v=20261109a"></script>
 </body>
 </html>

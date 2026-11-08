@@ -1734,3 +1734,180 @@ img.pain-emoji { width: 44px; height: 44px; flex: 0 0 auto; }
   .m-swipe > .case-featured { flex-basis: 86%; flex-direction: column; }
   .pain-grid.m-swipe > * { flex-basis: 74%; background: var(--color-surface); border: 1px solid var(--color-border); }
 }
+
+/* ===================== PRICING v2: tabs + package cards ===================== */
+.ptabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px;
+  background: var(--color-primary-tint);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-5);
+}
+.ptab {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 180ms var(--ease), color 180ms var(--ease);
+}
+.ptab[aria-selected="true"] { background: var(--color-primary); color: #fff; }
+.ptab:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ptabs-format { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 18px; margin-bottom: var(--space-7); }
+.ptabs-format .ptab { display: flex; flex-direction: column; align-items: flex-start; border-radius: 14px; padding: 9px 18px; }
+.ptabs-format .ptab small { font-size: 0.75rem; font-weight: 600; opacity: 0.75; }
+
+.price-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-5); padding-top: 14px; }
+@media (min-width: 760px) { .price-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .price-grid { grid-template-columns: repeat(4, 1fr); } }
+.price-card {
+  position: relative;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+.price-card-hit { background: var(--color-surface); border: 2px solid var(--color-primary); box-shadow: var(--shadow-md); }
+.price-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+}
+.price-badge-alt { background: var(--color-primary-darker); }
+.price-head { display: flex; align-items: baseline; gap: 8px; }
+.price-count { font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--color-text); }
+.price-word { font-weight: 800; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.04em; }
+.price-tag {
+  margin-left: auto;
+  align-self: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+.price-sub { font-size: 0.88rem; color: var(--color-text-muted); margin: 6px 0 var(--space-4); }
+.price-per { color: var(--color-text-muted); font-weight: 700; }
+.price-per b { font-size: 2.3rem; font-weight: 800; color: var(--color-primary); margin-right: 4px; }
+.price-total { margin: 4px 0 var(--space-3); font-size: 1.05rem; }
+.price-total s { color: var(--color-text-muted); font-weight: 600; margin-right: 4px; }
+.price-save {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-5);
+}
+.price-save-empty { background: transparent; }
+.price-card .btn { margin-top: auto; }
+
+.price-month {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.price-month > div { max-width: 620px; }
+.price-month-label { font-weight: 800; margin-bottom: var(--space-2); }
+.price-month .price-sub { margin-bottom: 0; }
+
+.price-includes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-6);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.price-includes li { position: relative; padding-left: 24px; }
+.price-includes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--color-success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m6 12.5 4 4 8-9' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat;
+}
+@media (max-width: 759px) {
+  .ptabs { display: flex; border-radius: 18px; }
+  .ptabs .ptab { flex: 1 1 auto; text-align: center; padding: 9px 12px; font-size: 0.88rem; border-radius: 14px; }
+  .ptabs-format .ptab { align-items: center; }
+  .price-grid.m-swipe { padding-top: 18px; }
+}
+
+/* ===================== PAINS v2 ===================== */
+.pains-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-3) var(--space-6); margin-bottom: var(--space-4); }
+.pains-head .section-title { margin-bottom: 0; }
+.pains-link { font-weight: 500; color: var(--color-primary); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.pains-link span { display: inline-block; transition: transform 200ms var(--ease); }
+.pains-link:hover span { transform: translateX(4px); }
+#pains .pain-card {
+  position: relative;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: var(--space-5);
+  transition: transform 250ms var(--ease), box-shadow 250ms var(--ease);
+}
+#pains .pain-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+#pains .pain-card p { font-weight: 700; }
+.pain-chip {
+  align-self: flex-start;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  padding: 7px 12px;
+  border-radius: 10px;
+  transform: rotate(-2deg);
+}
+.pain-card:nth-child(even) .pain-chip { transform: rotate(2deg); }
+#pains .pain-card-hit { background: var(--color-primary); border-color: transparent; color: #fff; box-shadow: var(--shadow-md); }
+.pain-card-hit .pain-chip { background: rgba(255, 255, 255, 0.16); color: #fff; }
+.pain-badge {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  transform: rotate(5deg);
+}
+#pains .pain-grid { background: transparent; }
+@media (min-width: 960px) {
+  #pains .pain-grid { align-items: start; padding-top: var(--space-4); }
+  #pains .pain-card:nth-child(3n+2) { margin-top: 28px; }
+  #pains .pain-card:nth-child(3n) { margin-top: -10px; }
+}

@@ -396,3 +396,28 @@
   sheet.querySelector(".example-sheet-close").addEventListener("click", () => sheet.close());
   sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.close(); });
 })();
+
+/* ---------- Pricing tabs (direction + format) ---------- */
+(function () {
+  document.querySelectorAll(".ptabs").forEach((group) => {
+    const tabs = Array.from(group.querySelectorAll(".ptab"));
+    function select(tab) {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(tab));
+      tab.addEventListener("keydown", (e) => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        const next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+        select(next);
+        next.focus();
+      });
+    });
+  });
+})();
