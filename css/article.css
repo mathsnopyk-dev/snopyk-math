@@ -1,0 +1,64 @@
+/* ===================== ARTICLE PAGE ===================== */
+.article { max-width: 780px; padding-top: var(--space-7); padding-bottom: var(--space-8); }
+.article-crumbs { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-5); }
+.article-crumbs a { color: var(--color-primary); }
+.article-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-4);
+}
+.article h1 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-3); }
+.article-meta { font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: var(--space-6); }
+.article-lead { font-size: 1.15rem; line-height: 1.6; margin-bottom: var(--space-6); }
+.article h2 { font-size: 1.45rem; font-weight: 800; margin: var(--space-8) 0 var(--space-4); line-height: 1.25; }
+.article p { font-size: 1.04rem; line-height: 1.7; margin-bottom: var(--space-4); color: var(--color-text); }
+.article-fig { margin: var(--space-5) 0 var(--space-6); }
+.article-fig svg, .riemann-svg { width: 100%; height: auto; display: block; }
+.article-fig figcaption { font-size: 0.88rem; color: var(--color-text-muted); margin-top: var(--space-2); text-align: center; }
+
+.riemann { background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-5); margin: var(--space-5) 0 var(--space-6); }
+.riemann-svg { background: #e8f0fe; border-radius: 16px; }
+.riemann-control { display: flex; flex-direction: column; gap: var(--space-2); margin: var(--space-5) 0 var(--space-4); font-weight: 700; }
+.riemann-range { width: 100%; accent-color: var(--color-primary); height: 28px; }
+.riemann-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+.riemann-stats div { background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-3); }
+.riemann-stats span { display: block; font-size: 0.78rem; color: var(--color-text-muted); font-weight: 600; }
+.riemann-stats b { font-size: 1.3rem; color: var(--color-primary); }
+@media (max-width: 520px) { .riemann-stats { grid-template-columns: 1fr; } }
+
+.formula-card { background: var(--color-primary); color: #fff; border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-5) 0; }
+.formula-card .formula { font-size: clamp(2.4rem, 1.8rem + 3vw, 3.6rem); font-weight: 800; text-align: center; color: #fff; margin-bottom: var(--space-4); }
+.formula-card li { margin-bottom: var(--space-2); font-size: 1.02rem; }
+.formula-card .formula-note { color: rgba(255, 255, 255, 0.85); margin: var(--space-3) 0 0; font-size: 0.95rem; }
+
+.table-wrap { overflow-x: auto; margin: var(--space-4) 0 var(--space-5); }
+.article table { width: 100%; border-collapse: collapse; font-size: 0.97rem; }
+.article th, .article td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); }
+.article th { background: var(--color-primary-tint); color: var(--color-primary); font-weight: 800; }
+.article-callout { background: var(--color-bg-alt); border-left: 4px solid var(--color-primary); border-radius: 0; padding: var(--space-4) var(--space-5); }
+.article-list { padding-left: 1.3em; margin: 0 0 var(--space-5); list-style: decimal; }
+.article-list li { margin-bottom: var(--space-3); line-height: 1.6; }
+
+.quiz { background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-5); }
+.quiz details summary, .article-faq summary { cursor: pointer; font-weight: 700; color: var(--color-primary); }
+.article-faq details { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-3); }
+.article-faq details p { margin: var(--space-3) 0 0; }
+
+.article-cta { margin-top: var(--space-8); background: linear-gradient(165deg, var(--color-primary) 0%, var(--color-primary-darker) 100%); color: #fff; border-radius: var(--radius-lg); padding: var(--space-7) var(--space-6); }
+.article-cta h2 { color: #fff; margin-top: 0; }
+.article-cta p { color: rgba(255, 255, 255, 0.85); }
+.article-cta-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
+
+/* article cards on /materials */
+.article-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-5); }
+.article-card { display: flex; flex-direction: column; gap: var(--space-3); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); transition: transform 220ms var(--ease), box-shadow 220ms var(--ease); }
+.article-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.article-card-formula { font-size: 2.2rem; font-weight: 800; color: var(--color-primary); background: var(--color-primary-tint); border-radius: var(--radius-md); padding: var(--space-4); text-align: center; }
+.article-card h3 { font-size: 1.1rem; font-weight: 800; }
+.article-card p { font-size: 0.93rem; color: var(--color-text-muted); }
+.article-card span { margin-top: auto; font-weight: 700; color: var(--color-primary); font-size: 0.92rem; }
