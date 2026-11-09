@@ -148,7 +148,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261109j">
+<link rel="stylesheet" href="css/style.css?v=20261109k">
 </head>
 <body data-lead-source="snopyk.math НМТ">
 
@@ -541,40 +541,46 @@
                 <li>що вже виходить добре</li>
                 <li>над чим працюємо далі — і як саме</li>
                 <li>скільки домашніх здано</li>
-                <li>прогрес в оцінках або пробних НМТ</li>
+                <li>прогрес у контрольних з викладачем або симуляціях НМТ</li>
               </ul>
               <p class="how-note">Будь-яке питання між звітами — напишіть менеджеру в Telegram.</p>
             </div>
 
-            <figure class="how-aside report-card" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
+            <figure class="how-aside report-card report-v2" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
               <span class="report-sample">Приклад · ім'я змінено</span>
-              <header class="report-head">
-                <span class="report-avatar" aria-hidden="true">І</span>
+              <header class="rc-head">
                 <div>
-                  <strong>Ірина · викладачка</strong>
-                  <span>Звіт за жовтень · Максим, 11 клас</span>
+                  <span class="rc-brand"><i aria-hidden="true"></i>Snopyk Math · НМТ · жовтень</span>
+                  <strong class="rc-name">Максим</strong>
+                  <span class="rc-sub">11 клас · викладачка Ірина</span>
                 </div>
+                <div class="rc-score"><strong class="rc-long">159</strong><em>бали НМТ</em></div>
               </header>
-              <div class="report-block">
-                <h5>📚 Що пройшли</h5>
-                <p>Логарифми і показникові рівняння. Геометрія — площі фігур.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Симуляції НМТ</h5><span class="rc-chips"><span class="rc-chip rc-ok">↑ +9 з минулої</span><span class="rc-chip rc-tint">до цілі 21</span></span></div>
+                <div class="rc-bars" role="img" aria-label="Симуляції НМТ: 14.09 — 143, 05.10 — 150, 26.10 — 159 балів, ціль 180">
+                  <span class="rc-goal" style="bottom:86px"><em>ціль 180</em></span>
+                  <div class="rc-col"><b>143</b><i style="height:34px"></i><span>14.09</span></div>
+                  <div class="rc-col"><b>150</b><i style="height:40px"></i><span>05.10</span></div>
+                  <div class="rc-col rc-now"><b>159</b><i style="height:47px"></i><span>26.10</span></div>
+                </div>
+                <div class="rc-test">Тестові бали <span class="rc-meter" aria-hidden="true"><i style="width:69%"></i></span><b>22 з 32</b></div>
               </div>
-              <div class="report-block report-good">
-                <h5>✅ Добре виходить</h5>
-                <p>Показникові рівняння — 9 з 10 правильно на самостійній у форматі НМТ.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Блоки НМТ</h5></div>
+                <div class="rc-topic rc-ok"><p>Показникові рівняння</p><span class="rc-st">сильна тема</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+                <div class="rc-topic rc-ok"><p>Планіметрія: площі фігур</p><span class="rc-st">сильна тема</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+                <div class="rc-topic rc-mid"><p>Логарифми</p><span class="rc-st">добираємо бали</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span></div>
+                <div class="rc-topic rc-bad"><p>Стереометрія</p><span class="rc-st">слабке місце</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></span></div>
               </div>
-              <div class="report-block report-work">
-                <h5>🔧 Треба пропрацювати</h5>
-                <p>Область допустимих значень у логарифмах — губить на ній бали. Додаємо по 2 такі завдання в кожне ДЗ.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Домашні</h5><span class="rc-chip rc-ok">7 з 8</span></div>
+                <div class="rc-hw" role="img" aria-label="Здано 7 домашніх з 8"><i>✓</i><i>✓</i><i>✓</i><i>✓</i><i>✓</i><i class="no">✕</i><i>✓</i><i>✓</i></div>
               </div>
-              <div class="report-stats">
-                <div><span>Домашні</span><strong>7 з 8</strong></div>
-                <div><span>Пробне НМТ</span><strong>142 → 156</strong></div>
+              <div class="rc-sec">
+                <div class="rc-note"><span class="rc-av" aria-hidden="true">І</span><p class="rc-bubble">Показникові рівняння розв'язує впевнено: 9 з 10 у форматі НМТ. <b>Далі:</b> ОДЗ у логарифмах, на ній губить бали. По 2 такі завдання в кожне ДЗ.<small>Ірина, викладачка</small></p></div>
               </div>
-              <div class="report-block report-next">
-                <h5>➡️ У листопаді</h5>
-                <p>Тригонометрія + перший повний пробний тест на час.</p>
-              </div>
+              <div class="rc-next"><span>Наступна симуляція</span><p>23 листопада · далі тригонометрія</p></div>
             </figure>
           </div>
         </li>

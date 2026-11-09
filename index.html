@@ -172,7 +172,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261109j">
+<link rel="stylesheet" href="css/style.css?v=20261109k">
 </head>
 <body>
 
@@ -577,40 +577,43 @@
                 <li>що вже виходить добре</li>
                 <li>над чим працюємо далі — і як саме</li>
                 <li>скільки домашніх здано</li>
-                <li>прогрес в оцінках або пробних НМТ</li>
+                <li>прогрес у контрольних з викладачем або симуляціях НМТ</li>
               </ul>
               <p class="how-note">Будь-яке питання між звітами — напишіть менеджеру в Telegram.</p>
             </div>
 
-            <figure class="how-aside report-card" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
+            <figure class="how-aside report-card report-v2" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
               <span class="report-sample">Приклад · ім'я змінено</span>
-              <header class="report-head">
-                <span class="report-avatar" aria-hidden="true">І</span>
+              <header class="rc-head">
                 <div>
-                  <strong>Ірина · викладачка</strong>
-                  <span>Звіт за жовтень · Максим, 8 клас</span>
+                  <span class="rc-brand"><i aria-hidden="true"></i>Snopyk Math · жовтень</span>
+                  <strong class="rc-name">Максим</strong>
+                  <span class="rc-sub">8 клас · викладачка Ірина</span>
                 </div>
+                <div class="rc-score"><strong>9<small>/12</small></strong><em>контрольна</em></div>
               </header>
-              <div class="report-block">
-                <h5>📚 Що пройшли</h5>
-                <p>Квадратні корені та їх властивості. Геометрія — теорема Піфагора.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Контрольні з викладачем</h5><span class="rc-chip rc-ok">↑ +2 за місяць</span></div>
+                <div class="rc-bars" role="img" aria-label="Контрольні з викладачем: на старті 6, у вересні 7, у жовтні 9 з 12">
+                  <div class="rc-col"><b>6</b><i style="height:40px"></i><span>старт</span></div>
+                  <div class="rc-col"><b>7</b><i style="height:47px"></i><span>вересень</span></div>
+                  <div class="rc-col rc-now"><b>9<small>/12</small></b><i style="height:60px"></i><span>жовтень</span></div>
+                </div>
               </div>
-              <div class="report-block report-good">
-                <h5>✅ Добре виходить</h5>
-                <p>Впевнено спрощує вирази з коренями — на самостійній 10 з 12 без підказок.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Теми жовтня</h5></div>
+                <div class="rc-topic rc-ok"><p>Спрощення виразів з коренями</p><span class="rc-st">впевнено</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
+                <div class="rc-topic rc-ok"><p>Властивості квадратних коренів</p><span class="rc-st">впевнено</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
+                <div class="rc-topic rc-mid"><p>Теорема Піфагора в задачах</p><span class="rc-st">ще тренуємо</span><span class="rc-seg" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span></div>
               </div>
-              <div class="report-block report-work">
-                <h5>🔧 Треба пропрацювати</h5>
-                <p>Задачі, де прямокутний трикутник треба побачити самому. Додаємо по 2 такі задачі в кожне ДЗ.</p>
+              <div class="rc-sec">
+                <div class="rc-h"><h5>Домашні</h5><span class="rc-chip rc-ok">7 з 8</span></div>
+                <div class="rc-hw" role="img" aria-label="Здано 7 домашніх з 8"><i>✓</i><i>✓</i><i>✓</i><i>✓</i><i class="no">✕</i><i>✓</i><i>✓</i><i>✓</i></div>
               </div>
-              <div class="report-stats">
-                <div><span>Домашні</span><strong>7 з 8</strong></div>
-                <div><span>Оцінки в школі</span><strong>7, 8 → 10</strong></div>
+              <div class="rc-sec">
+                <div class="rc-note"><span class="rc-av" aria-hidden="true">І</span><p class="rc-bubble">Максим уже сам спрощує вирази з коренями. <b>Далі:</b> по 2 задачі в кожне ДЗ, де прямокутний трикутник треба побачити самому.<small>Ірина, викладачка</small></p></div>
               </div>
-              <div class="report-block report-next">
-                <h5>➡️ У листопаді</h5>
-                <p>Квадратні рівняння + повторюємо дроби перед контрольною.</p>
-              </div>
+              <div class="rc-next"><span>У листо&shy;паді</span><p>Квадратні рівняння + повторюємо дроби</p></div>
             </figure>
           </div>
         </li>
