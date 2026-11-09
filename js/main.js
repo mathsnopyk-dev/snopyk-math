@@ -460,3 +460,15 @@
     update();
   });
 })();
+
+/* ---------- Header: "Напрями" dropdown (click / keyboard) ---------- */
+(function () {
+  const drop = document.querySelector(".nav-drop");
+  if (!drop) return;
+  const btn = drop.querySelector(".nav-drop-btn");
+  const set = (open) => { drop.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", String(open)); };
+  btn.addEventListener("click", (e) => { e.stopPropagation(); set(!drop.classList.contains("is-open")); });
+  document.addEventListener("click", (e) => { if (!drop.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") set(false); });
+  drop.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => set(false)));
+})();

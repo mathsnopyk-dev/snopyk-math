@@ -172,7 +172,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261109h">
+<link rel="stylesheet" href="css/style.css?v=20261109i">
 </head>
 <body>
 
@@ -188,13 +188,19 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Основна навігація">
       <ul>
+        <li class="nav-drop">
+          <button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="nav-drop-menu">Напрями <span aria-hidden="true">▾</span></button>
+          <ul class="nav-drop-menu" id="nav-drop-menu">
+            <li><a href="#audience">Математика 5–11 клас</a></li>
+            <li><a href="/nmt">Підготовка до НМТ</a></li>
+            <li><a href="#audience">Навчання за кордоном</a></li>
+            <li><a href="#audience">SAT та іноземні іспити</a></li>
+          </ul>
+        </li>
         <li><a href="#how">Як це працює</a></li>
-        <li><a href="#audience">Напрями</a></li>
-        <li><a href="#about">Про школу</a></li>
-        <li><a href="#testimonials">Відгуки</a></li>
+        <li><a href="#results">Результати</a></li>
         <li><a href="#pricing">Ціни</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="/vacancy">Вакансія</a></li>
+        <li><a href="/materials#articles">Статті</a></li>
       </ul>
     </nav>
 
@@ -210,15 +216,15 @@
 
 <div class="mobile-nav" id="mobile-nav">
   <ul>
-    <li><a href="#how">Як це працює</a></li>
+    <li><a href="/nmt">Підготовка до НМТ</a></li>
     <li><a href="#audience">Напрями</a></li>
-    <li><a href="#about">Про школу</a></li>
-    <li><a href="#testimonials">Відгуки</a></li>
+    <li><a href="#how">Як це працює</a></li>
+    <li><a href="#results">Результати</a></li>
     <li><a href="#pricing">Ціни</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="/vacancy">Вакансія</a></li>
+    <li><a href="/materials#articles">Статті</a></li>
   </ul>
-  <a href="#lead-form" class="btn btn-white btn-block js-open-modal">Записатись на діагностику</a>
+  <a href="#lead-form" class="btn btn-primary btn-block js-open-modal">Записатись на діагностику</a>
+  <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-outline-primary btn-block mobile-nav-tg">Написати в Telegram</a>
 </div>
 
 <main id="main">
@@ -1274,6 +1280,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261109b"></script>
+<script src="js/main.js?v=20261109c"></script>
 </body>
 </html>

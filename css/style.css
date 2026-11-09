@@ -1925,3 +1925,42 @@ img.pain-emoji { width: 44px; height: 44px; flex: 0 0 auto; }
   .section-dark .swipe-dots b { color: rgba(255, 255, 255, 0.7); }
 }
 .form-status-tg { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+
+/* ===================== NAV: "Напрями" dropdown ===================== */
+.nav-drop { position: relative; }
+.nav-drop-btn {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+.nav-drop-btn span { display: inline-block; font-size: 0.75em; margin-left: 2px; transition: transform 180ms var(--ease); }
+.nav-drop-btn:hover, .nav-drop.is-open .nav-drop-btn { color: var(--color-primary); }
+.nav-drop.is-open .nav-drop-btn span { transform: rotate(180deg); }
+.main-nav .nav-drop-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -16px;
+  min-width: 260px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  z-index: 120;
+}
+.nav-drop-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav-drop:hover .nav-drop-menu, .nav-drop.is-open .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu { display: flex; }
+.main-nav .nav-drop-menu a { display: block; padding: 10px 12px; border-radius: 10px; }
+.main-nav .nav-drop-menu a:hover { background: var(--color-primary-tint); }
+.main-nav .nav-drop-menu a[href="/nmt"] { color: var(--color-primary); font-weight: 800; }
+.mobile-nav .btn { margin-bottom: var(--space-3); }
