@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6CEEDRTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7C6CEEDRTM");
+  // Натискання на будь-яке посилання в Telegram рахуємо як звернення.
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest('a[href*="t.me/"]');
+    if (link) gtag("event", "contact_telegram", { link_url: link.href });
+  });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>НМТ з математики: формат, завдання, бали і скільки часу на що виділяти | snopyk.math</title>
+<meta name="description" content="Усе про НМТ з математики: 22 завдання трьох типів, як нараховують 32 бали, розподіл завдань за темами, поріг, переведення в 100–200 і план, скільки часу виділяти на кожен тип завдань.">
+<link rel="canonical" href="https://snopykmath.com/statti/nmt-z-matematyky-format">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="snopyk.math">
+<meta property="og:title" content="НМТ з математики: формат, завдання, бали і скільки часу на що виділяти">
+<meta property="og:description" content="Усе про НМТ з математики: 22 завдання трьох типів, як нараховують 32 бали, розподіл завдань за темами, поріг, переведення в 100–200 і план, скільки часу виділяти на кожен тип завдань.">
+<meta property="og:url" content="https://snopykmath.com/statti/nmt-z-matematyky-format">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://snopykmath.com/assets/articles/cover-nmt-format.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://snopykmath.com/assets/articles/cover-nmt-format.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"НМТ з математики: формат, завдання, бали і скільки часу на що виділяти","description":"Усе про НМТ з математики: 22 завдання трьох типів, як нараховують 32 бали, розподіл завдань за темами, поріг, переведення в 100–200 і план, скільки часу виділяти на кожен тип завдань.","inLanguage":"uk","datePublished":"2026-11-09","dateModified":"2026-11-09","author":{"@type":"Person","name":"Ірина Снопик"},"publisher":{"@type":"Organization","name":"snopyk.math","logo":{"@type":"ImageObject","url":"https://snopykmath.com/assets/images/logo-512.png"}},"mainEntityOfPage":"https://snopykmath.com/statti/nmt-z-matematyky-format"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Скільки завдань на НМТ з математики?","acceptedAnswer":{"@type":"Answer","text":"Усього 22 завдання: 15 з вибором однієї правильної відповіді з п'яти варіантів, 3 на встановлення відповідності і 4 з короткою відповіддю. Розгорнутих розв'язків писати не треба."}},
+{"@type":"Question","name":"Скільки часу дають на математику?","acceptedAnswer":{"@type":"Answer","text":"Українська мова і математика складають один блок на 120 хвилин, і учень сам розподіляє цей час між двома предметами. На математику орієнтовно варто закладати близько 60 хвилин."}},
+{"@type":"Question","name":"Чи можна користуватися калькулятором?","acceptedAnswer":{"@type":"Answer","text":"Ні, калькулятор заборонений. Можна писати на чернетці: проміжні обчислення не перевіряють, оцінюють лише відповідь."}},
+{"@type":"Question","name":"Скільки балів треба, щоб скласти НМТ з математики?","acceptedAnswer":{"@type":"Answer","text":"Поріг — 5 тестових балів із 32. Це відповідає 100 балам за шкалою 100–200."}}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261109h">
+<link rel="stylesheet" href="/css/test.css?v=20260925b">
+<link rel="stylesheet" href="/css/article.css?v=20261109g">
+</head>
+<body class="article-page">
+<a class="skip-link" href="#main">Перейти до змісту</a>
+<header class="site-header test-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="snopyk.math — на головну">
+      <span class="logo-mark" aria-hidden="true">S</span>
+      <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+    </a>
+    <a href="/materials#articles" class="test-back-link">← Усі статті</a>
+  </div>
+</header>
+
+<main id="main">
+  <article class="container article">
+    <nav class="article-crumbs" aria-label="Навігація"><a href="/">Головна</a> / <a href="/materials">Корисні матеріали</a> / Статті</nav>
+    <p class="article-tag">НМТ · формат тесту</p>
+    <h1>НМТ з математики: формат, завдання, бали і скільки часу на що виділяти</h1>
+    <p class="article-meta">Ірина Снопик, засновниця snopyk.math · 9 листопада 2026 · 8 хв читання</p>
+    <img class="article-cover" src="/assets/articles/cover-nmt-format.jpg" alt="НМТ з математики: 22 завдання, 32 бали, 60 хвилин" width="1200" height="630">
+
+    <p class="article-lead">Коли дитина знає, як побудований тест, страх зменшується наполовину. Розбираємо НМТ з математики по поличках: скільки завдань і яких, як рахують 32 бали, які теми трапляються найчастіше і як розподілити час, щоб устигнути все. А як ми готуємо до тесту за планом — розповідаємо на сторінці <a href="/nmt">підготовки до НМТ</a>.</p>
+
+    <div class="key-facts">
+      <div><b>22</b><span>завдання</span></div>
+      <div><b>32</b><span>максимум балів</span></div>
+      <div><b>5</b><span>балів — поріг</span></div>
+      <div><b>~60</b><span>хв на математику</span></div>
+    </div>
+
+    <h2>Як влаштований НМТ у 2026 році</h2>
+    <p>НМТ складається з чотирьох предметів: три обов'язкові — українська мова, математика, історія України — і один за вибором. Тест проходить в один день, у два блоки по <b>120 хвилин</b> з перервою 20 хвилин.</p>
+    <p>Математика стоїть у <b>першому блоці разом з українською мовою</b>. Окремого таймера на математику немає: 120 хвилин на два предмети учень розподіляє сам. Тому вміння планувати час — така сама частина підготовки, як і формули.</p>
+
+    <h2>Скільки завдань і яких</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Тип завдання</th><th>Кількість</th><th>Бали за одне</th><th>Разом</th></tr></thead>
+        <tbody>
+          <tr><td>З вибором однієї правильної відповіді (з 5 варіантів)</td><td>15</td><td>1</td><td>15</td></tr>
+          <tr><td>На встановлення відповідності (3 логічні пари)</td><td>3</td><td>до 3 — по 1 за кожну пару</td><td>9</td></tr>
+          <tr><td>З короткою відповіддю (вписати число)</td><td>4</td><td>2</td><td>8</td></tr>
+          <tr><td><b>Усього</b></td><td><b>22</b></td><td></td><td><b>32</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Розгорнутих розв'язків на НМТ немає: треба лише позначити варіант або вписати відповідь. Хід розв'язку ніхто не перевіряє — тож одна арифметична помилка коштує всього завдання.</p>
+    <figure class="scheme">
+      <figcaption class="scheme-title">Звідки беруться 32 бали</figcaption>
+      <div class="scheme-bar" aria-hidden="true"><span style="flex:46.88;background:#004aad">15</span><span style="flex:28.12;background:#1f66c4">9</span><span style="flex:25.00;background:#012a5e">8</span></div>
+      <ul class="scheme-legend"><li><span style="background:#004aad"></span>15 завдань з вибором відповіді — <b>15 бали</b></li><li><span style="background:#1f66c4"></span>3 завдання на відповідність — <b>9 бали</b></li><li><span style="background:#012a5e"></span>4 завдання з короткою відповіддю — <b>8 бали</b></li></ul>
+      <p class="scheme-total">Разом: 32 бали. Коротких відповідей лише 4, але вони дають чверть усіх балів.</p>
+    </figure>
+    <p class="article-callout"><b>Важливо про відповідності:</b> бали нараховують за кожну правильну пару окремо. Якщо впевнені лише у двох парах із трьох — однаково заповнюйте, це вже 2 бали.</p>
+
+    <p class="inline-hint"><span aria-hidden="true">👉</span> Не впевнені, на скільки балів дитина пише вже зараз? <a href="/test">Пройдіть безкоштовний тест рівня</a> — 5 запитань, 2 хвилини.</p>
+
+    <h2>Які теми трапляються і скільки завдань на кожну</h2>
+    <p>Завдання розподілені за змістовими лініями. Ось скільки завдань кожного типу припадає на кожну тему і скільки балів вона може дати:</p>
+    <div class="table-wrap">
+      <table class="dist-table">
+        <thead>
+          <tr><th>Предмет</th><th>Тема</th><th>Вибір відповіді</th><th>Відповідність</th><th>Коротка відповідь</th><th>Усього завдань</th><th>Макс. балів</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Алгебра і початки аналізу</td><td>Числа і вирази</td><td>4</td><td>1</td><td>0</td><td><b>5</b></td><td>7</td></tr>
+            <tr><td></td><td>Рівняння і нерівності</td><td>3</td><td>0</td><td>1</td><td><b>4</b></td><td>5</td></tr>
+            <tr><td></td><td>Функції, прогресії</td><td>2</td><td>1</td><td>1</td><td><b>4</b></td><td>7</td></tr>
+            <tr><td></td><td>Комбінаторика, теорія ймовірностей, статистика</td><td>1</td><td>0</td><td>1</td><td><b>2</b></td><td>3</td></tr>
+            <tr><td>Геометрія</td><td>Планіметрія</td><td>3</td><td>1</td><td>0</td><td><b>4</b></td><td>6</td></tr>
+            <tr><td></td><td>Стереометрія</td><td>2</td><td>0</td><td>1</td><td><b>3</b></td><td>4</td></tr>
+          <tr class="dist-total"><td></td><td><b>Усього</b></td><td><b>15</b></td><td><b>3</b></td><td><b>4</b></td><td><b>22</b></td><td><b>32</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Що з цього видно: <b>алгебра дає 22 бали з 32</b>, геометрія — 10. А найбільше завдань — на «Числа і вирази» і «Рівняння і нерівності»: це база з 5–9 класу. Тому <a href="/nmt">підготовку до НМТ</a> ми завжди починаємо з неї, а не з логарифмів.</p>
+
+    <p class="inline-hint"><span aria-hidden="true">👉</span> Дитина «плаває» в рівняннях і нерівностях — найбільшій темі тесту? <a href="/#lead-form">Запишіться на урок-діагностику</a>: викладач за 15 хвилин покаже, де саме прогалини.</p>
+
+    <h2>Скільки часу виділяти на кожен тип завдань</h2>
+    <p>Офіційного розподілу немає — це наша рекомендація з досвіду підготовки учнів. Якщо закладати на математику близько 60 хвилин, вийде так:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Що робимо</th><th>Скільки часу</th><th>Орієнтир</th></tr></thead>
+        <tbody>
+          <tr><td>15 завдань з вибором відповіді</td><td>25–30 хв</td><td>≈ 2 хв на завдання</td></tr>
+          <tr><td>3 завдання на відповідність</td><td>10 хв</td><td>≈ 3 хв на завдання</td></tr>
+          <tr><td>4 завдання з короткою відповіддю</td><td>15–20 хв</td><td>≈ 4–5 хв на завдання</td></tr>
+          <tr><td>Перевірка і перенесення відповідей</td><td>5 хв</td><td>не залишайте на останню хвилину</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="scheme">
+      <figcaption class="scheme-title">Як розподілити ~60 хвилин на математику</figcaption>
+      <div class="scheme-bar" aria-hidden="true"><span style="flex:46.67;background:#004aad">28</span><span style="flex:16.67;background:#1f66c4">10</span><span style="flex:28.33;background:#012a5e">17</span><span style="flex:8.33;background:#85b0ea">5</span></div>
+      <ul class="scheme-legend"><li><span style="background:#004aad"></span>вибір відповіді — <b>28 хв</b></li><li><span style="background:#1f66c4"></span>відповідності — <b>10 хв</b></li><li><span style="background:#012a5e"></span>коротка відповідь — <b>17 хв</b></li><li><span style="background:#85b0ea"></span>перевірка — <b>5 хв</b></li></ul>
+      <p class="scheme-total">Орієнтир, а не правило: головне — не застрягати на одному завданні довше 4–5 хвилин.</p>
+    </figure>
+    <ol class="article-list">
+      <li><b>Перший прохід — по легких.</b> Розв'язуйте все, що виходить одразу, складне позначайте і йдіть далі.</li>
+      <li><b>Не застрягайте.</b> Якщо завдання «не йде» понад 4–5 хвилин — пропустіть і поверніться в кінці.</li>
+      <li><b>Перевіряйте підстановкою.</b> У завданнях з вибором часто швидше підставити варіанти, ніж розв'язувати з нуля.</li>
+      <li><b>Не залишайте порожніх клітинок.</b> За неправильну відповідь бали не знімають, тож у тестовій частині краще вгадати, ніж пропустити.</li>
+    </ol>
+
+    <p class="inline-hint"><span aria-hidden="true">👉</span> Не встигає за 60 хвилин або застрягає на одному завданні? <a href="/#lead-form">На діагностиці</a> побачимо, де губиться час, і складемо план тренувань на час.</p>
+
+    <h2>Що можна і чого не можна на тесті</h2>
+    <ul class="check-list article-checks">
+      <li>Чернетка дозволена — пишіть проміжні обчислення, їх не перевіряють</li>
+      <li>Оцінюють лише відповідь — розписувати хід розв'язку не треба</li>
+      <li>Калькулятор заборонений — рахувати доведеться вручну, тому тренуйте обчислення без нього</li>
+    </ul>
+
+    <p class="inline-hint"><span aria-hidden="true">👉</span> Рахує лише з калькулятором? На НМТ його не буде — і це тренується. <a href="/#lead-form">Почніть з діагностики</a>: перевіримо обчислення і базу.</p>
+
+    <h2>Поріг і переведення в 100–200</h2>
+    <p>Щоб скласти НМТ з математики, потрібно набрати щонайменше <b>5 тестових балів із 32</b> — це 100 балів за шкалою 100–200. Далі тестові бали переводять у шкалу 100–200 за таблицею, яку затверджують щороку. Для орієнтиру — таблиця НМТ 2024 року:</p>
+    <div class="table-wrap table-narrow">
+      <table>
+        <thead><tr><th>Тестові бали</th><th>Бал 100–200</th></tr></thead>
+        <tbody><tr><td>5</td><td>100</td></tr><tr><td>8</td><td>123</td></tr><tr><td>10</td><td>134</td></tr><tr><td>12</td><td>140</td></tr><tr><td>15</td><td>147</td></tr><tr><td>18</td><td>150</td></tr><tr><td>20</td><td>152</td></tr><tr><td>22</td><td>159</td></tr><tr><td>24</td><td>167</td></tr><tr><td>26</td><td>173</td></tr><tr><td>28</td><td>180</td></tr><tr><td>30</td><td>189</td></tr><tr><td>32</td><td>200</td></tr></tbody>
+      </table>
+    </div>
+    <p class="article-note">Таблиця переведення щороку може трохи відрізнятися — дивіться актуальну на сайті Українського центру оцінювання якості освіти.</p>
+    <p>Помітьте: від 15 до 20 тестових балів результат росте повільно (147 → 152), а от кожен бал вище 22 додає по 3–5 балів шкали. Тому для високого результату вирішальні саме складні завдання з короткою відповіддю — вони дають по 2 бали.</p>
+
+    <p class="inline-hint"><span aria-hidden="true">👉</span> Хочете високий бал? Складні завдання з короткою відповіддю дають по 2 бали — дивіться, <a href="/nmt">як ми готуємо до НМТ</a>, щоб їх розв'язувати.</p>
+
+    <h2>Як готуватися: короткий план</h2>
+    <ol class="article-list">
+      <li><b>Діагностика.</b> Зрозуміти, які теми з 5–9 класу «плавають», — на них тримається більша частина тесту.</li>
+      <li><b>Закрити базу.</b> Числа і вирази, рівняння, відсотки, планіметрія — це майже половина балів.</li>
+      <li><b>Пройти програму старших класів</b> за планом: функції, логарифми, тригонометрія, стереометрія.</li>
+      <li><b>Тренуватися у форматі НМТ</b> — на завданнях усіх трьох типів і без калькулятора.</li>
+      <li><b>Пробні тести на час</b> за 2–3 місяці до НМТ, щоб відпрацювати розподіл 120 хвилин між математикою й українською.</li>
+    </ol>
+    <p>Як це виглядає на практиці — план по тижнях, щомісячні звіти для батьків і результати наших учнів — дивіться на сторінці <a href="/nmt">Підготовка до НМТ з математики</a>.</p>
+
+    <h2>Часті питання</h2>
+    <div class="article-faq">
+      <details><summary>Скільки завдань на НМТ з математики?</summary><p>Усього 22 завдання: 15 з вибором однієї правильної відповіді з п'яти варіантів, 3 на встановлення відповідності і 4 з короткою відповіддю. Розгорнутих розв'язків писати не треба.</p></details>
+      <details><summary>Скільки часу дають на математику?</summary><p>Українська мова і математика складають один блок на 120 хвилин, і учень сам розподіляє цей час між двома предметами. На математику орієнтовно варто закладати близько 60 хвилин.</p></details>
+      <details><summary>Чи можна користуватися калькулятором?</summary><p>Ні, калькулятор заборонений. Можна писати на чернетці: проміжні обчислення не перевіряють, оцінюють лише відповідь.</p></details>
+      <details><summary>Скільки балів треба, щоб скласти НМТ з математики?</summary><p>Поріг — 5 тестових балів із 32. Це відповідає 100 балам за шкалою 100–200.</p></details>
+    </div>
+
+    <aside class="article-author">
+      <picture>
+        <source srcset="/assets/images/founder-photo.webp" type="image/webp">
+        <img src="/assets/images/founder-photo.png" alt="Ірина Снопик" width="96" height="96" loading="lazy">
+      </picture>
+      <div>
+        <p class="article-author-name">Ірина Снопик</p>
+        <p class="article-author-bio">Засновниця snopyk.math, математик за освітою. Викладаю 9 років, підготувала понад 150 учнів, сама склала ЗНО з математики на 189 балів.</p>
+      </div>
+    </aside>
+
+    <aside class="article-cta">
+      <h2>Хочете знати, скільки балів дитина набере вже зараз?</h2>
+      <p>На уроці-діагностиці викладач перевірить рівень за темами НМТ, покаже прогалини і складе план підготовки до дати тесту.</p>
+      <div class="article-cta-actions">
+        <a href="/#lead-form" class="btn btn-white btn-lg">Записатись на діагностику</a>
+        <a href="/nmt" class="btn btn-outline-white btn-lg">Як ми готуємо до НМТ</a>
+      </div>
+    </aside>
+  </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h2 class="footer-title">Контакти</h2>
+        <ul role="list">
+          <li><a href="/#lead-form">Записатися на діагностику</a></li>
+          <li><a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener">Написати в Telegram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Напрями</h2>
+        <ul role="list">
+          <li><a href="/#audience">Математика 5–11 клас</a></li>
+          <li><a href="/nmt">Підготовка до НМТ</a></li>
+          <li><a href="/#audience">Навчання за кордоном</a></li>
+          <li><a href="/#audience">SAT та міжнародні іспити</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Школа</h2>
+        <ul role="list">
+          <li><a href="/#how">Як це працює</a></li>
+          <li><a href="/#about">Про школу</a></li>
+          <li><a href="/#pricing">Ціни</a></li>
+          <li><a href="/#results">Результати учнів</a></li>
+          <li><a href="/#reviews">Відгуки</a></li>
+          <li><a href="/#faq">Питання й відповіді</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Корисне</h2>
+        <ul role="list">
+          <li><a href="/materials">Корисні матеріали</a></li>
+          <li><a href="/test">Тест рівня</a></li>
+          <li><a href="/vacancy">Стати частиною команди</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">Ми в соцмережах</h2>
+        <ul role="list">
+          <li><a href="https://www.instagram.com/snopyk.math" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://t.me/snopyk_math" target="_blank" rel="noopener">Telegram-канал</a></li>
+          <li><a href="https://www.youtube.com/@snopyk_math" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@snopyk.math" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="/" class="logo logo-footer">
+        <span class="logo-mark" aria-hidden="true">S</span>
+        <span class="logo-text">snopyk<span class="logo-dot">.</span>math</span>
+      </a>
+      <p class="footer-copy">
+        © <span id="year">2026</span> snopyk.math — онлайн-школа математики
+        · <a href="https://drive.google.com/file/d/1xS51puthIazZKLgg-EhiMAUw-Eq3Ri7i/view?usp=sharing" target="_blank" rel="noopener" class="footer-legal-link">Публічна оферта</a>
+        · <a href="/privacy" class="footer-legal-link">Політика конфіденційності</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://t.me/snopyk_math_manager1" class="tg-float" target="_blank" rel="noopener" aria-label="Написати нам у Telegram">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-8-6m12-10-8 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="tg-float-label">Написати в Telegram</span>
+</a>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

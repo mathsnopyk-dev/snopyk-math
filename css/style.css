@@ -1911,3 +1911,17 @@ img.pain-emoji { width: 44px; height: 44px; flex: 0 0 auto; }
   #pains .pain-card:nth-child(3n+2) { margin-top: 28px; }
   #pains .pain-card:nth-child(3n) { margin-top: -10px; }
 }
+
+/* ===================== PHONES: swipe position dots ===================== */
+.swipe-dots { display: none; }
+@media (max-width: 759px) {
+  .swipe-dots { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: var(--space-3); }
+  .swipe-dots[hidden] { display: none; }
+  .swipe-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--color-border); transition: width 200ms var(--ease), background 200ms var(--ease); }
+  .swipe-dots span.is-on { width: 20px; border-radius: 4px; background: var(--color-primary); }
+  .swipe-dots b { margin-left: 8px; font-size: 0.78rem; font-weight: 700; color: var(--color-text-muted); }
+  .section-dark .swipe-dots span { background: rgba(255, 255, 255, 0.3); }
+  .section-dark .swipe-dots span.is-on { background: #fff; }
+  .section-dark .swipe-dots b { color: rgba(255, 255, 255, 0.7); }
+}
+.form-status-tg { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }

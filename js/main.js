@@ -297,7 +297,7 @@
         await postLead({ ...data, source: document.body.dataset.leadSource || "snopyk.math site" });
         rememberLeadSent();
         if (window.gtag) gtag("event", "generate_lead", { form: form.id });
-        statusEl.textContent = "Дякуємо! Ми зв'яжемось з вами найближчим часом.";
+        statusEl.innerHTML = 'Дякуємо! Менеджер напише вам протягом 15 хвилин (у робочий час). Не хочете чекати? <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="form-status-tg">Написати зараз у Telegram →</a>';
         statusEl.className = "form-status is-success";
         form.reset();
         if (form.id === "lead-form-modal") {
@@ -419,5 +419,44 @@
         next.focus();
       });
     });
+  });
+})();
+
+/* ---------- Phones: "1 / 6" dots under sideways lists ---------- */
+(function () {
+  const lists = Array.from(document.querySelectorAll(".m-swipe, .tg-grid, .how-flow"));
+  if (!lists.length) return;
+  lists.forEach((list) => {
+    const items = Array.from(list.children);
+    if (items.length < 2) return;
+    const bar = document.createElement("div");
+    bar.className = "swipe-dots";
+    bar.setAttribute("aria-hidden", "true");
+    const dots = items.map(() => {
+      const d = document.createElement("span");
+      bar.appendChild(d);
+      return d;
+    });
+    const label = document.createElement("b");
+    bar.appendChild(label);
+    list.insertAdjacentElement("afterend", bar);
+
+    function update() {
+      const scrollable = list.scrollWidth > list.clientWidth + 4;
+      bar.hidden = !scrollable;
+      if (!scrollable) return;
+      const first = items[0].getBoundingClientRect();
+      const step = items[1].getBoundingClientRect().left - first.left || first.width;
+      let i = Math.round(list.scrollLeft / step);
+      if (list.scrollLeft + list.clientWidth >= list.scrollWidth - 4) i = items.length - 1;
+      i = Math.max(0, Math.min(items.length - 1, i));
+      dots.forEach((d, k) => d.classList.toggle("is-on", k === i));
+      label.textContent = (i + 1) + " / " + items.length;
+    }
+    let t = false;
+    list.addEventListener("scroll", () => { if (!t) { t = true; requestAnimationFrame(() => { t = false; update(); }); } }, { passive: true });
+    window.addEventListener("resize", update);
+    document.querySelectorAll(".review-tab, .ptab").forEach((b) => b.addEventListener("click", () => setTimeout(update, 0)));
+    update();
   });
 })();
