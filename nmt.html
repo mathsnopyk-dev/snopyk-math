@@ -86,7 +86,7 @@
       "name": "Скільки коштує підготовка до НМТ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі до 6 учнів — від 300 грн з учня. Урок триває 55 хвилин."
+        "text": "Індивідуально — від 550 до 650 грн за урок залежно від пакета (4, 8, 16 чи 32 уроки), у парі — від 450 до 500 грн з учня, міні-група до 6 учнів — 2 400 грн на місяць. Урок триває 55 хвилин, перший урок-діагностика — 300 грн."
       }
     },
     {
@@ -143,7 +143,7 @@
         <li><a href="/">Головна</a></li>
         <li><a href="#program">Програма</a></li>
         <li><a href="#how">Як готуємось</a></li>
-        <li><a href="#testimonials">Результати</a></li>
+        <li><a href="#results">Результати</a></li>
         <li><a href="#pricing">Ціни</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -164,7 +164,7 @@
     <li><a href="/">Головна</a></li>
     <li><a href="#program">Програма</a></li>
     <li><a href="#how">Як готуємось</a></li>
-    <li><a href="#testimonials">Результати</a></li>
+    <li><a href="#results">Результати</a></li>
     <li><a href="#pricing">Ціни</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -178,28 +178,39 @@
     <div class="hero-watermark" aria-hidden="true">НМТ</div>
     <div class="container hero-grid">
       <div class="hero-inner">
-        <p class="eyebrow">Підготовка до НМТ з математики онлайн</p>
-        <h1>НМТ з математики: план замість паніки</h1>
+        <p class="hero-badge">Підготовка до НМТ з математики · онлайн</p>
+        <h1>НМТ з математики: <span class="hl">план</span> замість паніки</h1>
         <p class="hero-lead">
-          Пройдемо всю програму за чітким планом до дати тесту, закриємо прогалини
-          з попередніх класів і натренуємо завдання у форматі НМТ — щоб у день іспиту
-          дитина знала, що робити, а не вгадувала.
+          Пройдемо <strong>всю програму за чітким планом</strong> до дати тесту, закриємо <strong>прогалини з попередніх класів</strong>
+          і натренуємо <strong>завдання у форматі НМТ</strong> — щоб у день іспиту дитина знала, що робити, а не вгадувала.
         </p>
         <div class="hero-actions">
-          <button type="button" class="btn btn-white btn-lg js-open-modal">Записатись на діагностику</button>
-          <a href="/test" class="btn btn-outline-white btn-lg">Перевірити рівень</a>
+          <button type="button" class="btn btn-white btn-lg btn-hero js-open-modal">
+            <span>Записатись<br>на діагностику</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="btn-tag">перший крок</span>
+          </button>
+          <a href="/test" class="btn btn-outline-white btn-lg btn-hero"><span>Перевірити<br>рівень</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
-        <ul class="hero-points">
-          <li>Індивідуально, у парі або в міні-групі</li>
+        <p class="hero-note"><span class="hero-dot" aria-hidden="true"></span>Для 9–11 класів · онлайн з будь-якої країни</p>
+        <ul class="hero-points hero-points-mobile">
+          <li>План до дати НМТ</li>
           <li>Тренування на завданнях формату НМТ</li>
-          <li>Звіти про прогрес для батьків</li>
+          <li>Звіт для батьків щомісяця</li>
         </ul>
       </div>
       <div class="hero-photo">
         <picture>
           <source srcset="assets/images/founder-photo.webp" type="image/webp">
-          <img src="assets/images/founder-photo.png" alt="Ірина, засновниця snopyk.math" width="832" height="900" fetchpriority="high">
+          <img src="assets/images/founder-photo.png" alt="Ірина Снопик, засновниця snopyk.math" width="832" height="900" fetchpriority="high">
         </picture>
+        <span class="hero-chip hero-chip-1">🏆 184 бали НМТ</span>
+        <span class="hero-chip hero-chip-2">📈 +47 балів</span>
+        <ul class="hero-checks" aria-hidden="true">
+          <li>Діагностика рівня на першому уроці</li>
+          <li>План по тижнях до дати НМТ</li>
+          <li>Тренування на завданнях формату НМТ</li>
+          <li>Звіт для батьків щомісяця</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -207,32 +218,34 @@
   <!-- ===== PAINS ===== -->
   <section class="section" id="pains">
     <div class="container">
-      <p class="section-eyebrow">Знайомо?</p>
-      <h2 class="section-title">Що найчастіше хвилює батьків перед НМТ</h2>
+      <div class="pains-head">
+        <h2 class="section-title">Вам до нас, <span class="hl">якщо…</span></h2>
+        <a href="#lead-form" class="pains-link js-open-modal">Впізнали себе? Почніть з діагностики <span aria-hidden="true">→</span></a>
+      </div>
 
-      <ul class="pain-grid">
+      <ul class="pain-grid m-swipe">
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">⏳</span>
+          <span class="pain-chip" aria-hidden="true">НМТ − 300 днів</span>
           <p>«До НМТ менше року, а прогалини тягнуться ще з 7 класу»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">😰</span>
+          <span class="pain-chip" aria-hidden="true">⏱ час закінчується…</span>
           <p>«Теорію ніби знає, а на тесті губиться і не встигає»</p>
         </li>
-        <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">🎓</span>
+        <li class="pain-card pain-card-hit">
+          <span class="pain-badge">Бюджет</span><span class="pain-chip" aria-hidden="true">бал → бюджет?</span>
           <p>«Від балу залежить бюджет і вибір університету»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">📚</span>
+          <span class="pain-chip" aria-hidden="true">тема 1 · тема 7 · тема 3</span>
           <p>«Сам готуватися не виходить — немає системи, все вроздріб»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">🏫</span>
+          <span class="pain-chip" aria-hidden="true">школа ≠ формат НМТ</span>
           <p>«У школі проходять програму, а до формату тесту не готують»</p>
         </li>
         <li class="pain-card">
-          <span class="pain-emoji" aria-hidden="true">🧩</span>
+          <span class="pain-chip" aria-hidden="true">sin? log? … ?</span>
           <p>«Боїться, що в день іспиту все вилетить з голови»</p>
         </li>
       </ul>
@@ -241,13 +254,97 @@
     </div>
   </section>
 
+  <!-- ===== RESULTS ===== -->
+  <section class="section section-dark" id="results">
+    <div class="container">
+      <p class="section-eyebrow">Результати НМТ</p>
+      <h2 class="section-title">Було → <span class="hl">стало</span> <img class="sticker" src="assets/stickers/trophy.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
+      <p class="section-lead">Реальні бали НМТ наших учнів — і що вони самі про це написали.</p>
+
+      <ul class="cases-grid m-swipe" role="list">
+        <li class="case-card case-featured">
+          <div class="case-featured-main">
+            <div class="case-top">
+              <strong class="case-name">Олександр</strong>
+              <span class="case-tag">Рік підготовки до НМТ</span>
+            </div>
+            <div class="case-scores">
+              <div class="case-after"><span>бал НМТ</span><b>184</b></div>
+            </div>
+          </div>
+          <div class="case-featured-quote">
+            <p class="case-quote">«Всі минулі зливи робив на 200, мінімум був 189. Сьогодні на 184 написав… Дякую за цей рік і можливість прогнати всю програму 🙏❤️»</p>
+            <p class="case-teacher">Викладачка: «Я вірила, що в нього вийде 200, але хвилювання і нестача часу взяли своє. І так це дуже високий показник».</p>
+          </div>
+        </li>
+        <li class="case-card">
+          <div class="case-top">
+            <strong class="case-name">Христина</strong>
+            <span class="case-tag">Підготовка до НМТ</span>
+          </div>
+          <div class="case-scores">
+            <div class="case-before"><span>на старті</span><b>~120</b></div>
+            <span class="case-arrow" aria-hidden="true">→</span>
+            <div class="case-after"><span>бал НМТ</span><b>167</b></div>
+            <span class="case-delta">+47</span>
+          </div>
+          <p class="case-quote">«Якщо чесно, тоді навіть не думала, що зможу так сильно підтягнути свій результат».</p>
+        </li>
+        <li class="case-card">
+          <div class="case-top">
+            <strong class="case-name">Вероніка</strong>
+            <span class="case-tag">Підготовка до НМТ</span>
+          </div>
+          <div class="case-scores">
+            <div class="case-before"><span>на старті</span><b>&lt;100</b></div>
+            <span class="case-arrow" aria-hidden="true">→</span>
+            <div class="case-after"><span>бал НМТ</span><b>148</b></div>
+          </div>
+          <p class="case-quote">«Добрий день, на 148 здала 🎉🎉»</p>
+        </li>
+        <li class="case-card">
+          <div class="case-top">
+            <strong class="case-name">Ірина</strong>
+            <span class="case-tag">Підготовка до НМТ</span>
+          </div>
+          <div class="case-scores">
+            <div class="case-before"><span>на старті</span><b>100–130</b></div>
+            <span class="case-arrow" aria-hidden="true">→</span>
+            <div class="case-after"><span>стало</span><b>155</b></div>
+          </div>
+          <p class="case-quote">«А ще я заново частково полюбила математику і справді почала її розуміти».</p>
+        </li>
+        <li class="case-card">
+          <div class="case-top">
+            <strong class="case-name">Ангеліна</strong>
+            <span class="case-tag">НМТ</span>
+          </div>
+          <div class="case-scores">
+            <div class="case-after"><span>бал НМТ</span><b>170</b></div>
+          </div>
+          <p class="case-quote">«ЗДАЛА!!! 170!!!! Щиро дякую Вам!!! Без Вас я б не досягла такого результату!»</p>
+        </li>
+        <li class="case-card">
+          <div class="case-top">
+            <strong class="case-name">Марк</strong>
+            <span class="case-tag">НМТ · 1 місяць підготовки</span>
+          </div>
+          <div class="case-scores">
+            <div class="case-after"><span>бал НМТ</span><b>151</b></div>
+          </div>
+          <p class="case-quote">«Дякую вам велике за той час, який був, — дуже цікаво і класно було».</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ===== PROGRAM ===== -->
   <section class="section section-alt" id="program">
     <div class="container">
       <p class="section-eyebrow">Що входить у підготовку</p>
-      <h2 class="section-title">Уся програма НМТ — по темах і по черзі</h2>
+      <h2 class="section-title">Уся програма НМТ — <span class="hl">по темах</span> і по черзі</h2>
 
-      <div class="cards-grid audience-grid">
+      <div class="cards-grid audience-grid m-swipe">
         <article class="audience-card">
           <h3>Алгебра і функції</h3>
           <p>Вирази, степені й корені, логарифми, графіки функцій, похідна — від основ до задач рівня НМТ.</p>
@@ -279,45 +376,201 @@
   <!-- ===== HOW IT WORKS ===== -->
   <section class="section" id="how">
     <div class="container">
-      <p class="section-eyebrow">Як готуємось</p>
-      <h2 class="section-title">4 кроки від «не знаю, з чого почати» до впевненості на тесті</h2>
+      <p class="section-eyebrow">Як це працює</p>
+      <h2 class="section-title">4 кроки від «не знаю, з чого почати» до <span class="hl">впевненості на тесті</span></h2>
+      <p class="section-lead">Нічого не відбувається «за кадром»: ви знаєте, що ми робимо, навіщо і що вже вийшло.</p>
 
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num">1</span>
-          <h3>Діагностика рівня</h3>
-          <p>На першому уроці бачимо, що дитина вже вміє і де прогалини — з усіх класів, не лише з 11-го.</p>
+      <ol class="how-flow">
+        <!-- 1. Diagnostic -->
+        <li class="how-item">
+          <span class="how-num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b>1</b></span>
+          <div class="how-body how-body-aside">
+            <div class="how-text">
+              <p class="how-step-label">Крок 1</p>
+              <h3>Урок-діагностика</h3>
+              <p class="how-short">45–55 хв онлайн, 300 грн. Знайомимось, робимо короткий тест і знаходимо, де саме прогалини. Того ж дня ви отримуєте висновки й рекомендації.</p>
+              <p>Перший урок — з викладачем, якого ми підібрали саме під дитину.</p>
+              <ul class="how-chips" role="list">
+                <li>⏱ 45–55 хв онлайн</li>
+                <li>💳 300 грн</li>
+              </ul>
+              <ol class="how-substeps">
+                <li><b>Знайомимось</b> — щоб дитині було спокійно і не страшно.</li>
+                <li><b>Робимо короткий тест</b> — дивимось не на оцінку, а на те, де саме прогалини.</li>
+                <li><b>Розбираємо одну тему</b> — так ви побачите, як проходять наші заняття.</li>
+                <li><b>Підсумовуємо</b> — розповідаємо, як працюємо далі, і даємо маленький крок додому.</li>
+              </ol>
+            </div>
+            <div class="how-aside how-card">
+              <h4>Того ж дня ви отримаєте</h4>
+              <ul class="check-list">
+                <li>що в дитини вже добре виходить</li>
+                <li>конкретні теми, де є прогалини</li>
+                <li>рекомендацію: скільки занять на тиждень і з чого почати</li>
+                <li>формат і вартість під вашу ситуацію</li>
+              </ul>
+              <p class="how-note">На уроці ми нічого не продаємо — продовжувати чи ні, вирішуєте ви.</p>
+            </div>
+          </div>
         </li>
-        <li class="step">
-          <span class="step-num">2</span>
-          <h3>План до дати НМТ</h3>
-          <p>Розписуємо теми по тижнях так, щоб устигнути все і мати час на повторення перед тестом.</p>
+
+        <!-- 2. Plan -->
+        <li class="how-item">
+          <span class="how-num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6M9 13h6M9 17h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b>2</b></span>
+          <div class="how-body how-body-aside">
+            <div class="how-text">
+              <p class="how-step-label">Крок 2</p>
+              <h3>План до дати НМТ</h3>
+              <p class="how-short">Викладач розписує план по тижнях до дати НМТ: які теми головні, що повторити з минулих класів і коли пробні тести.</p>
+              <button type="button" class="how-example-btn" data-example="plan">Подивитись приклад →</button>
+              <p>Після діагностики викладач розписує план підготовки по тижнях — так, щоб устигнути всю програму і мати час на повторення перед тестом:</p>
+              <ul class="check-list how-list">
+                <li>який бал ставимо за мету і до якої дати</li>
+                <li>які теми найважливіше пройти зараз</li>
+                <li>що повторити з минулих класів, щоб нове лягало на основу</li>
+                <li>що і в якому місяці проходимо</li>
+                <li>скільки занять на тиждень для цього потрібно</li>
+              </ul>
+              <p class="how-note">Щомісяця звіряємось із планом у звіті й за потреби коригуємо. Викладача підбираємо під клас, тему, характер дитини і ваш розклад, а якщо не підійшов — замінимо без зайвих питань.</p>
+            </div>
+
+            <figure class="how-aside report-card plan-card" data-example-src="plan" aria-label="Приклад плану навчання">
+              <span class="report-sample">Приклад · ім'я змінено</span>
+              <header class="report-head">
+                <span class="report-avatar" aria-hidden="true">📋</span>
+                <div>
+                  <strong>План навчання</strong>
+                  <span>Максим, 11 клас · НМТ</span>
+                </div>
+              </header>
+              <div class="report-block report-next">
+                <h5>🎯 Мета</h5>
+                <p>170+ балів НМТ з математики — у травні.</p>
+              </div>
+              <div class="report-block report-work">
+                <h5>🔁 Спершу повторюємо</h5>
+                <p>Відсотки, дроби й рівняння з 5–9 класу — на них тримається половина тесту.</p>
+              </div>
+              <div class="report-block report-good">
+                <h5>📌 Головне зараз</h5>
+                <p>Функції і графіки, логарифми та показникові рівняння.</p>
+              </div>
+              <div class="report-stats">
+                <div><span>Грудень</span><strong>тригонометрія</strong></div>
+                <div><span>Березень</span><strong>пробні НМТ</strong></div>
+              </div>
+              <div class="report-block">
+                <h5>⏱ Темп</h5>
+                <p>2 заняття на тиждень по 55 хв.</p>
+              </div>
+            </figure>
+          </div>
         </li>
-        <li class="step">
-          <span class="step-num">3</span>
-          <h3>Заняття і практика</h3>
-          <p>Пояснюємо тему, відпрацьовуємо на завданнях формату НМТ, даємо домашні для закріплення.</p>
+
+        <!-- 3. Lessons -->
+        <li class="how-item">
+          <span class="how-num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6.5" width="12.5" height="11" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 10.5 5-3v9l-5-3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><b>3</b></span>
+          <div class="how-body how-body-aside">
+            <div class="how-text">
+              <p class="how-step-label">Крок 3</p>
+              <h3>Заняття по 55 хвилин</h3>
+              <p class="how-short">Індивідуально, у парі чи в міні-групі. Домашні, записи уроків і всі матеріали — на навчальній платформі.</p>
+              <p>Індивідуально, у парі або в міні-групі. Пояснюємо так, щоб дійшло, — і стільки разів, скільки треба.</p>
+              <div class="how-platform">
+                <strong>📚 Усе на навчальній платформі</strong>
+                <p>Домашні завдання, записи уроків і всі матеріали зберігаються на платформі, доступ до якої ви отримуєте після старту. Пропустили урок чи забули тему — можна будь-коли переглянути пояснення ще раз.</p>
+              </div>
+              <ul class="check-list how-list">
+                <li>Уроки в Zoom, пояснення — на дошці Miro дитини</li>
+                <li>Домашнє після кожного уроку — викладач його перевіряє</li>
+                <li>Окремий чат у Telegram з викладачем і менеджером</li>
+                <li>Розклад та історія занять — в особистому кабінеті</li>
+              </ul>
+            </div>
+            <figure class="how-aside how-photo">
+              <img src="assets/images/lesson-laptop.jpg" alt="Урок snopyk.math: дошка Miro з розминкою для мозку і відеозв'язок з учнем" width="1000" height="750" loading="lazy">
+              <figcaption>Так виглядає урок: відеозв'язок і дошка Miro, де зберігається все пройдене</figcaption>
+            </figure>
+          </div>
         </li>
-        <li class="step">
-          <span class="step-num">4</span>
-          <h3>Звіти для батьків</h3>
-          <p>Ви бачите, що пройшли, що вже виходить і над чим працюємо далі — без сюрпризів наприкінці.</p>
+
+        <!-- 4. Monthly report -->
+        <li class="how-item">
+          <span class="how-num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3.5 16.5 5.5-5.5 4 4 7-7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7.5h5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>4</b></span>
+          <div class="how-body how-body-aside">
+            <div class="how-text">
+              <p class="how-step-label">Крок 4</p>
+              <h3>Звіт для батьків щомісяця</h3>
+              <p class="how-short">Щомісяця в Telegram: що пройшли, що вже виходить, над чим працюємо і скільки домашніх здано.</p>
+              <button type="button" class="how-example-btn" data-example="report">Подивитись приклад →</button>
+              <p>Не треба вгадувати за оцінками, що відбувається на уроках. Наприкінці кожного місяця викладач надсилає вам у Telegram короткий звіт:</p>
+              <ul class="check-list how-list">
+                <li>що пройшли за місяць</li>
+                <li>що вже виходить добре</li>
+                <li>над чим працюємо далі — і як саме</li>
+                <li>скільки домашніх здано</li>
+                <li>прогрес в оцінках або пробних НМТ</li>
+              </ul>
+              <p class="how-note">Будь-яке питання між звітами — напишіть менеджеру в Telegram.</p>
+            </div>
+
+            <figure class="how-aside report-card" data-example-src="report" aria-label="Приклад щомісячного звіту для батьків">
+              <span class="report-sample">Приклад · ім'я змінено</span>
+              <header class="report-head">
+                <span class="report-avatar" aria-hidden="true">І</span>
+                <div>
+                  <strong>Ірина · викладачка</strong>
+                  <span>Звіт за жовтень · Максим, 11 клас</span>
+                </div>
+              </header>
+              <div class="report-block">
+                <h5>📚 Що пройшли</h5>
+                <p>Логарифми і показникові рівняння. Геометрія — площі фігур.</p>
+              </div>
+              <div class="report-block report-good">
+                <h5>✅ Добре виходить</h5>
+                <p>Показникові рівняння — 9 з 10 правильно на самостійній у форматі НМТ.</p>
+              </div>
+              <div class="report-block report-work">
+                <h5>🔧 Треба пропрацювати</h5>
+                <p>Область допустимих значень у логарифмах — губить на ній бали. Додаємо по 2 такі завдання в кожне ДЗ.</p>
+              </div>
+              <div class="report-stats">
+                <div><span>Домашні</span><strong>7 з 8</strong></div>
+                <div><span>Пробне НМТ</span><strong>142 → 156</strong></div>
+              </div>
+              <div class="report-block report-next">
+                <h5>➡️ У листопаді</h5>
+                <p>Тригонометрія + перший повний пробний тест на час.</p>
+              </div>
+            </figure>
+          </div>
         </li>
       </ol>
+      <p class="how-swipe-hint" aria-hidden="true">Гортайте вбік →</p>
+
+      <div class="section-cta">
+        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
+      </div>
     </div>
   </section>
+
+  <dialog class="example-sheet" id="example-sheet" aria-label="Приклад">
+    <button type="button" class="example-sheet-close" aria-label="Закрити">&times;</button>
+    <div class="example-sheet-body"></div>
+  </dialog>
 
   <!-- ===== WHEN TO START ===== -->
   <section class="section section-alt" id="when">
     <div class="container">
       <p class="section-eyebrow">Коли починати</p>
-      <h2 class="section-title">Чим раніше почати — тим спокійніше і тим вищий бал</h2>
+      <h2 class="section-title">Чим раніше почати — тим <span class="hl">спокійніше</span> і тим вищий бал</h2>
       <p class="section-lead">
         Багато хто думає, що 9 місяців вистачить усім. Вистачить — але лише тоді, коли база вже хороша.
         Якщо прогалини тягнуться з 5–7 класу, спершу треба закрити їх, а вже потім готуватися до тесту.
       </p>
 
-      <div class="cards-grid audience-grid">
+      <div class="cards-grid audience-grid when-grid">
         <article class="audience-card">
           <h3>Слабка база або «майже нуль»</h3>
           <p><strong>Починати щонайменше за 2 роки</strong> — з 9–10 класу. Перший рік закриваємо прогалини, другий — готуємось саме до НМТ.</p>
@@ -339,9 +592,49 @@
   <!-- ===== TESTIMONIALS ===== -->
   <section class="section" id="testimonials">
     <div class="container">
-      <p class="section-eyebrow">Результати</p>
-      <h2 class="section-title">Бали НМТ наших учнів</h2>
-      <p class="section-lead">Відео та фото-відгуки від учнів і батьків — гортайте стрічку, щоб побачити всі.</p>
+      <h3 class="subsection-title subsection-first" id="reviews">Що пишуть учні після НМТ</h3>
+      <p class="subsection-lead">Повідомлення з наших чатів — як їх написали, лише скорочено.</p>
+      <ul class="tg-grid" role="list">
+          <li class="tg-card">
+            <div class="tg-head">
+              <span class="tg-avatar" aria-hidden="true">В</span>
+              <div><strong>Випускниця</strong><span>рік підготовки до НМТ</span></div>
+            </div>
+            <p class="tg-bubble">
+              Якби рік тому мені сказали, що я напишу математику на такий бал, я б просто не повірила.
+              Я завжди думала, що математика це не моє. Боялася навіть відкривати тести, бо була впевнена,
+              що нічого не вийде. Але за цей рік я просто в шоці з прогресу.<br><br>
+              На самому НМТ я реально згадувала твої пояснення. Не формули з підручника, а саме твої
+              асоціації й приклади 😂
+            </p>
+            <span class="tg-meta">повідомлення в Telegram</span>
+          </li>
+          <li class="tg-card">
+            <div class="tg-head">
+              <span class="tg-avatar tg-avatar-gold" aria-hidden="true">У</span>
+              <div><strong>Учениця</strong><span>старша школа</span></div>
+            </div>
+            <p class="tg-bubble tg-bubble-short">з вами легко)</p>
+            <p class="tg-bubble tg-bubble-short">я думала логарифми і ці показникові рівняння ніколи не зрозумію</p>
+            <p class="tg-bubble tg-bubble-short">а тут бац — майже на максимум</p>
+            <span class="tg-meta">повідомлення в Telegram</span>
+          </li>
+          <li class="tg-card">
+            <div class="tg-head">
+              <span class="tg-avatar tg-avatar-gold" aria-hidden="true">А</span>
+              <div><strong>Учениця міні-групи</strong><span>підготовка до НМТ</span></div>
+            </div>
+            <p class="tg-bubble">
+              Навчання було настільки комфортним, що кожного уроку чекала з нетерпінням. Найбільше мені
+              допомогла саме алгебра — до занять з тобою я взагалі не вірила, що зможу скласти математику
+              хоча б на прохідний бал.<br><br>
+              Це був набагато більше, ніж просто групки ❤️
+            </p>
+            <span class="tg-meta">повідомлення в Telegram</span>
+          </li>
+      </ul>
+
+      <h3 class="subsection-title">Відео-відгуки</h3>
     </div>
 
     <div class="carousel" id="testimonials-carousel">
@@ -377,7 +670,7 @@
     <div class="container">
       <div class="about-copy">
         <p class="section-eyebrow">Хто готує</p>
-        <h2 class="section-title">Ірина — засновниця snopyk.math</h2>
+        <h2 class="section-title"><span class="hl">Ірина</span> — засновниця snopyk.math</h2>
         <p>
           Математик за освітою, викладаю 9 років. Сама складала ЗНО з математики на 189 балів,
           тож знаю тест не лише як викладач, а й зсередини. За цей час підготувала понад 150 учнів.
@@ -395,29 +688,143 @@
   <section class="section" id="pricing">
     <div class="container">
       <p class="section-eyebrow">Ціни</p>
-      <h2 class="section-title">Вартість підготовки до НМТ</h2>
-      <p class="section-lead">Урок триває 55 хвилин. Формат і кількість занять на тиждень радимо після діагностики.</p>
+      <h2 class="section-title">Вартість <span class="hl">підготовки до НМТ</span> <img class="sticker" src="assets/stickers/money_bag.png" alt="" aria-hidden="true" width="90" height="90" loading="lazy"></h2>
+      <p class="section-lead">Урок триває 55 хвилин. Чим більший пакет — тим дешевший кожен урок. Що обрати, підкажемо після діагностики.</p>
 
-      <ul class="format-price-grid">
-        <li class="format-price">
-          <h3>Індивідуально</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 550 <span class="format-price-unit">грн / урок</span></p>
-          <p>Найшвидший шлях: план і темп повністю під одного учня.</p>
-        </li>
-        <li class="format-price">
-          <h3>У парі</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 450 <span class="format-price-unit">грн / урок</span></p>
-          <p>Готуватися разом з другом чи однокласником. Ціна за одного учня.</p>
-        </li>
-        <li class="format-price">
-          <h3>Міні-група</h3>
-          <p class="format-price-value"><span class="format-price-from">від</span> 300 <span class="format-price-unit">грн / урок</span></p>
-          <p>До 6 учнів, які готуються до НМТ. Ціна за одного учня.</p>
-        </li>
-      </ul>
+      <div class="ptabs ptabs-main" role="tablist" aria-label="Напрям">
+        <button type="button" role="tab" class="ptab" aria-selected="true" aria-controls="pp-math" id="pt-math">Математика й НМТ</button>
+        <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-higher" id="pt-higher" tabindex="-1">Вища математика</button>
+        <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-foreign" id="pt-foreign" tabindex="-1">SAT, Matura та іноземні іспити</button>
+      </div>
 
-      <div class="section-cta">
-        <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись на діагностику</button>
+      <div class="ppanel" role="tabpanel" id="pp-math" aria-labelledby="pt-math">
+        <div class="ptabs ptabs-format" role="tablist" aria-label="Формат">
+          <button type="button" role="tab" class="ptab" aria-selected="true" aria-controls="pp-ind" id="pt-ind"><b>Індивідуально</b><small>1 учень</small></button>
+          <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-pair" id="pt-pair" tabindex="-1"><b>У парі</b><small>ціна за учня</small></button>
+          <button type="button" role="tab" class="ptab" aria-selected="false" aria-controls="pp-group" id="pt-group" tabindex="-1"><b>Міні-група</b><small>до 6 учнів</small></button>
+        </div>
+
+        <div class="ppanel" role="tabpanel" id="pp-ind" aria-labelledby="pt-ind">
+          <ul class="price-grid m-swipe" role="list">
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">4</span><span class="price-word">уроки</span><span class="price-tag">Старт</span></div>
+            <p class="price-sub">для старту</p>
+            <p class="price-per"><b>650</b> грн/урок</p>
+            <p class="price-total"><b>2 600 грн</b></p>
+            <span class="price-save price-save-empty">&nbsp;</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card price-card-hit">
+            <span class="price-badge">★ обирають найчастіше</span>
+            <div class="price-head"><span class="price-count">8</span><span class="price-word">уроків</span><span class="price-tag">Оптимум</span></div>
+            <p class="price-sub">основний пакет</p>
+            <p class="price-per"><b>620</b> грн/урок</p>
+            <p class="price-total"><s>5 200</s> <b>4 960 грн</b></p>
+            <span class="price-save">економія 240 грн</span>
+            <button type="button" class="btn btn-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">16</span><span class="price-word">уроків</span><span class="price-tag">Стабільний</span></div>
+            <p class="price-sub">на 2 місяці</p>
+            <p class="price-per"><b>590</b> грн/урок</p>
+            <p class="price-total"><s>10 400</s> <b>9 440 грн</b></p>
+            <span class="price-save">економія 960 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            <span class="price-badge price-badge-alt">максимальна вигода</span>
+            <div class="price-head"><span class="price-count">32</span><span class="price-word">уроки</span><span class="price-tag">Максимум</span></div>
+            <p class="price-sub">довгострокове навчання</p>
+            <p class="price-per"><b>550</b> грн/урок</p>
+            <p class="price-total"><s>20 800</s> <b>17 600 грн</b></p>
+            <span class="price-save">економія 3 200 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          </ul>
+        </div>
+        <div class="ppanel" role="tabpanel" id="pp-pair" aria-labelledby="pt-pair" hidden>
+          <ul class="price-grid m-swipe" role="list">
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">4</span><span class="price-word">уроки</span><span class="price-tag">Старт</span></div>
+            <p class="price-sub">для старту</p>
+            <p class="price-per"><b>500</b> грн/урок</p>
+            <p class="price-total"><b>2 000 грн</b></p>
+            <span class="price-save price-save-empty">&nbsp;</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card price-card-hit">
+            <span class="price-badge">★ обирають найчастіше</span>
+            <div class="price-head"><span class="price-count">8</span><span class="price-word">уроків</span><span class="price-tag">Оптимум</span></div>
+            <p class="price-sub">основний пакет</p>
+            <p class="price-per"><b>480</b> грн/урок</p>
+            <p class="price-total"><s>4 000</s> <b>3 840 грн</b></p>
+            <span class="price-save">економія 160 грн</span>
+            <button type="button" class="btn btn-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            
+            <div class="price-head"><span class="price-count">16</span><span class="price-word">уроків</span><span class="price-tag">Стабільний</span></div>
+            <p class="price-sub">на 2 місяці</p>
+            <p class="price-per"><b>465</b> грн/урок</p>
+            <p class="price-total"><s>8 000</s> <b>7 440 грн</b></p>
+            <span class="price-save">економія 560 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          <li class="price-card">
+            <span class="price-badge price-badge-alt">максимальна вигода</span>
+            <div class="price-head"><span class="price-count">32</span><span class="price-word">уроки</span><span class="price-tag">Максимум</span></div>
+            <p class="price-sub">довгострокове навчання</p>
+            <p class="price-per"><b>450</b> грн/урок</p>
+            <p class="price-total"><s>16 000</s> <b>14 400 грн</b></p>
+            <span class="price-save">економія 1 600 грн</span>
+            <button type="button" class="btn btn-outline-primary btn-block js-open-modal">Записатись →</button>
+          </li>
+          </ul>
+          <p class="pricing-note">Удвох з другом чи однокласником — разом веселіше і дешевше. Ціна вказана за одного учня.</p>
+        </div>
+        <div class="ppanel" role="tabpanel" id="pp-group" aria-labelledby="pt-group" hidden>
+          <div class="price-month">
+            <div>
+              <p class="price-month-label">Міні-група · до 6 учнів з однаковою метою</p>
+              <p class="price-per"><b>2&nbsp;400</b> грн/місяць</p>
+              <p class="price-sub">Найдоступніший формат. Оплата раз на місяць — до 3 числа.</p>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg js-open-modal">Записатись →</button>
+          </div>
+        </div>
+
+        <ul class="price-includes" role="list">
+          <li>Урок 55 хвилин онлайн</li>
+          <li>Домашні з перевіркою викладача</li>
+          <li>Записи уроків і матеріали на платформі</li>
+          <li>Звіт для батьків щомісяця</li>
+        </ul>
+        <p class="pricing-note">Ціни — для української шкільної програми та підготовки до НМТ. Перший урок-діагностика — 300 грн.</p>
+      </div>
+
+      <div class="ppanel" role="tabpanel" id="pp-higher" aria-labelledby="pt-higher" hidden>
+        <div class="price-month">
+          <div>
+            <p class="price-month-label">Вища математика · для студентів і старшокласників</p>
+            <p class="price-per"><b>За запитом</b></p>
+            <p class="price-sub">Вартість залежить від курсу і теми. Напишіть, що вивчаєте, — підберемо викладача і назвемо ціну.</p>
+          </div>
+          <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Дізнатись ціну →</a>
+        </div>
+      </div>
+
+      <div class="ppanel" role="tabpanel" id="pp-foreign" aria-labelledby="pt-foreign" hidden>
+        <div class="price-month">
+          <div>
+            <p class="price-month-label">SAT, Matura, IB та математика за іноземною програмою</p>
+            <p class="price-per"><b>За запитом</b></p>
+            <p class="price-sub">Вартість залежить від іспиту, програми і терміну. Напишіть нам — назвемо ціну після короткої розмови.</p>
+          </div>
+          <a href="https://t.me/snopyk_math_manager1" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Дізнатись ціну →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -484,7 +891,7 @@
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
-            <p>Індивідуальний урок — від 550 грн, у парі — від 450 грн, у міні-групі до 6 учнів — від 300 грн з учня. Урок триває 55 хвилин.</p>
+            <p>Індивідуально — від 550 до 650 грн за урок залежно від пакета (4, 8, 16 чи 32 уроки), у парі — від 450 до 500 грн з учня, міні-група до 6 учнів — 2 400 грн на місяць. Урок триває 55 хвилин, перший урок-діагностика — 300 грн.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -633,6 +1040,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261020"></script>
+<script src="js/main.js?v=20261109a"></script>
 </body>
 </html>
